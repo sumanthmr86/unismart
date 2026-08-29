@@ -55,6 +55,7 @@ export interface Product {
   deals: Deal[];
   reviews: DemoReview[];
   image?: string;
+  images?: string[];
   priceUpdatedOn?: string;
   featured?: boolean;
   deal?: boolean;

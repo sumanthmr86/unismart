@@ -75,9 +75,20 @@ function extractRating(reviews) {
   return { rating: star, count };
 }
 
-function extractImage(images) {
-  if (!images?.Primary?.Large?.URL) return '';
-  return images.Primary.Large.URL;
+function extractImages(images) {
+  const urls = new Set();
+  if (!images) return [];
+  const add = (obj) => {
+    if (obj?.URL) urls.add(obj.URL);
+    if (obj?.Large?.URL) urls.add(obj.Large.URL);
+    if (obj?.Medium?.URL) urls.add(obj.Medium.URL);
+    if (obj?.Small?.URL) urls.add(obj.Small.URL);
+  };
+  if (images.Primary) add(images.Primary);
+  if (images.Variants) {
+    for (const v of images.Variants) add(v);
+  }
+  return Array.from(urls);
 }
 
 function extractFeatures(itemInfo) {
@@ -166,6 +177,11 @@ async function searchCategory(query, category, limit = 10) {
       ItemCount: limit,
       Resources: [
         'Images.Primary.Large',
+        'Images.Primary.Medium',
+        'Images.Primary.Small',
+        'Images.Variants.Large',
+        'Images.Variants.Medium',
+        'Images.Variants.Small',
         'ItemInfo.Title',
         'ItemInfo.ByLineInfo',
         'ItemInfo.Classifications',
@@ -229,7 +245,8 @@ async function main() {
 
       const { price, previousPrice } = extractPrice(item.Offers?.Listings);
       const { rating, count: ratingCount } = extractRating(item.CustomerReviews);
-      const image = extractImage(item.Images);
+      const images = extractImages(item.Images);
+      const image = images[0] || '';
       const features = extractFeatures(item.ItemInfo);
       const shortRec = buildShortRecommendation(title, features, category);
       const description = buildDescription(title, features, rating, ratingCount, category);
@@ -270,6 +287,7 @@ async function main() {
         ],
         reviews: [],
         image: image || `https://via.placeholder.com/400?text=${encodeURIComponent(name)}`,
+        images: images.length ? images : [image || `https://via.placeholder.com/400?text=${encodeURIComponent(name)}`],
         priceUpdatedOn: new Date().toISOString(),
         featured: false,
         deal: true,
