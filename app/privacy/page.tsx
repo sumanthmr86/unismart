@@ -21,7 +21,8 @@ const sections = [
     heading: 'Data this build collects',
     body: [
       'Nothing that leaves your device. Product selection and compare lists are stored in your browser’s local storage so your session feels cohesive — this stays on your device and is never sent to a server.',
-      'If you subscribe to the newsletter or submit the contact form, your message is received and read, and we reply by email. We never sell or share your details.',
+      'If you subscribe to the newsletter, we store only your email address with our newsletter provider (Buttondown) to send you the weekly email. You can unsubscribe with one click from any email, and we never sell or share your details.',
+      'If you submit the contact form, your message is received and read, and we reply by email. We never sell or share your details.',
     ],
   },
   {
