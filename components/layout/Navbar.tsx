@@ -7,6 +7,7 @@ import { Menu, Scale, X } from 'lucide-react';
 import { Logo } from '@/components/ui/Logo';
 import { SearchBar } from '@/components/SearchBar';
 import { useCompare } from '@/components/compare/CompareProvider';
+import { CATEGORIES } from '@/data/categories';
 import { NAV_LINKS } from '@/lib/site';
 import { cn } from '@/lib/cn';
 
@@ -124,6 +125,21 @@ export function Navbar() {
                   </Link>
                 );
               })}
+              <div className="mt-2 border-t border-slate-100 pt-2">
+                <p className="px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+                  Shop by category
+                </p>
+                {CATEGORIES.map((category) => (
+                  <Link
+                    key={category.id}
+                    href={`/category/${category.id}`}
+                    onClick={() => setMobileOpen(false)}
+                    className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-slate-600 transition hover:bg-indigo-50 hover:text-indigo-700"
+                  >
+                    {category.name}
+                  </Link>
+                ))}
+              </div>
               <Link
                 href="/compare"
                 onClick={() => setMobileOpen(false)}
