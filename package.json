@@ -10,7 +10,8 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "sync:prices": "node scripts/sync-prices.mjs",
-    "sync:prices:verify": "node scripts/verify-parser.mjs"
+    "sync:prices:verify": "node scripts/verify-parser.mjs",
+    "pull:products": "node scripts/pull-products.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
