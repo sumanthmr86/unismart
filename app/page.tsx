@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import type { BuyingGuide } from '@/lib/types';
 import { SearchBar } from '@/components/SearchBar';
 import { ProductGrid } from '@/components/ProductGrid';
+import { DealsCarousel } from '@/components/DealsCarousel';
 import { CategoryCard } from '@/components/CategoryCard';
 import { GuideCard } from '@/components/GuideCard';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -46,7 +47,7 @@ const steps = [
 
 export default function HomePage() {
   const featured = getFeaturedProducts().slice(0, 8);
-  const deals = getFeaturedDeals().slice(0, 4);
+  const deals = getFeaturedDeals().slice(0, 8);
   const guides = GUIDES.slice(0, 6);
 
   return (
@@ -54,7 +55,16 @@ export default function HomePage() {
       <HeroSection />
       <CategoriesSection />
       <FeaturedProductsSection products={featured} />
-      <FeaturedDealsSection products={deals} />
+      <DealsCarousel
+        products={deals}
+        headline={{
+          eyebrow: "Today's best deals",
+          title: 'Deals worth a second look',
+          subtitle:
+            'Steep discounts on products we would still recommend at full price — auto-rotating all day.',
+          href: '/deals',
+        }}
+      />
       <GuidesSection guides={guides} />
       <HowItWorksSection />
       <NewsletterSection />
@@ -171,26 +181,6 @@ function FeaturedProductsSection({
           href="/products"
         />
         <ProductGrid products={products} />
-      </div>
-    </section>
-  );
-}
-
-function FeaturedDealsSection({
-  products,
-}: {
-  products: ReturnType<typeof getFeaturedDeals>;
-}) {
-  return (
-    <section className="py-16 sm:py-20" aria-labelledby="deals-heading">
-      <div className="container-page">
-        <SectionHeading
-          eyebrow="Featured deals"
-          title="Deals worth a second look"
-          subtitle="Steep discounts on products we would still recommend at full price."
-          href="/deals"
-        />
-        <ProductGrid products={products} skeletonCount={4} className="xl:grid-cols-4" />
       </div>
     </section>
   );
