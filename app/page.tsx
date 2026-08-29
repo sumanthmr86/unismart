@@ -1,5 +1,6 @@
-import { BellRing, Scale, Search, ShieldCheck, Sparkles, TrendingDown } from 'lucide-react';
+import { BellRing, Scale, Search, ShieldCheck, Sparkles, Swords, TrendingDown } from 'lucide-react';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import type { BuyingGuide } from '@/lib/types';
 import { SearchBar } from '@/components/SearchBar';
 import { ProductGrid } from '@/components/ProductGrid';
@@ -9,7 +10,9 @@ import { GuideCard } from '@/components/GuideCard';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Newsletter } from '@/components/Newsletter';
 import { CATEGORIES } from '@/data/categories';
+import { COMPARISONS } from '@/data/comparisons';
 import { GUIDES } from '@/data/guides';
+import { getProductBySlug } from '@/data/products';
 import { EXAMPLE_SEARCHES, SITE_DESCRIPTION, SITE_NAME } from '@/lib/site';
 import { getFeaturedDeals, getFeaturedProducts } from '@/lib/products';
 
@@ -49,6 +52,7 @@ export default function HomePage() {
   const featured = getFeaturedProducts().slice(0, 8);
   const deals = getFeaturedDeals().slice(0, 8);
   const guides = GUIDES.slice(0, 6);
+  const comparisons = COMPARISONS.slice(0, 3);
 
   return (
     <>
@@ -65,6 +69,7 @@ export default function HomePage() {
           href: '/deals',
         }}
       />
+      <ComparisonsSection comparisons={comparisons} />
       <GuidesSection guides={guides} />
       <HowItWorksSection />
       <NewsletterSection />
@@ -181,6 +186,59 @@ function FeaturedProductsSection({
           href="/products"
         />
         <ProductGrid products={products} />
+      </div>
+    </section>
+  );
+}
+
+function ComparisonsSection({
+  comparisons,
+}: {
+  comparisons: (typeof COMPARISONS)[number][];
+}) {
+  const items = comparisons
+    .map((comparison) => {
+      const first = getProductBySlug(comparison.productIds[0]);
+      const second = getProductBySlug(comparison.productIds[1]);
+      return first && second ? { comparison, first, second } : null;
+    })
+    .filter((item): item is NonNullable<typeof item> => item !== null);
+
+  return (
+    <section
+      className="bg-slate-50 py-16 sm:py-20"
+      aria-labelledby="comparisons-heading"
+    >
+      <div className="container-page">
+        <SectionHeading
+          eyebrow="Head-to-head"
+          title="Settling the debates"
+          subtitle="The product arguments every hostel has — settled side by side with real specs and live prices."
+          href="/vs"
+        />
+        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          {items.map(({ comparison, first, second }) => (
+            <Link
+              key={comparison.id}
+              href={`/vs/${comparison.slug}`}
+              className="card group flex h-full flex-col p-5 transition-shadow hover:shadow-elevate"
+            >
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-indigo-600">
+                <Swords className="h-4 w-4" aria-hidden="true" />
+                {first.brand} vs {second.brand}
+              </span>
+              <h3 className="mt-2 font-display text-base font-bold leading-snug text-slate-900 transition-colors group-hover:text-indigo-600">
+                {first.name} vs {second.name}
+              </h3>
+              <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-600">
+                {comparison.metaDescription}
+              </p>
+              <p className="mt-3 text-xs font-semibold text-indigo-600">
+                {comparison.picks[0]?.label}
+              </p>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );

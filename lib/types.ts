@@ -81,3 +81,23 @@ export type SortKey =
   | 'price_desc'
   | 'rating'
   | 'discount';
+
+export interface ComparisonPick {
+  label: string;
+  productId: string;
+  reason: string;
+}
+
+export interface ProductComparison {
+  id: string;
+  slug: string;
+  metaTitle: string;
+  metaDescription: string;
+  productIds: [string, string];
+  intro: string;
+  keyDifferences: string[];
+  verdict: string;
+  picks: ComparisonPick[];
+  faq: { q: string; a: string }[];
+  publishedOn: string;
+}

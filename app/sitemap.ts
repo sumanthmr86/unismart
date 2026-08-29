@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { COMPARISONS } from '@/data/comparisons';
 import { PRODUCTS } from '@/data/products';
 import { GUIDES } from '@/data/guides';
 import { SITE_URL } from '@/lib/site';
@@ -7,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: SITE_URL, changeFrequency: 'daily', priority: 1 },
     { url: `${SITE_URL}/products`, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${SITE_URL}/vs`, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${SITE_URL}/deals`, changeFrequency: 'daily', priority: 0.8 },
     { url: `${SITE_URL}/guides`, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${SITE_URL}/about`, changeFrequency: 'monthly', priority: 0.4 },
@@ -22,6 +24,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const comparisonRoutes: MetadataRoute.Sitemap = COMPARISONS.map((comparison) => ({
+    url: `${SITE_URL}/vs/${comparison.slug}`,
+    lastModified: new Date(comparison.publishedOn),
+    changeFrequency: 'weekly',
+    priority: 0.7,
+  }));
+
   const guideRoutes: MetadataRoute.Sitemap = GUIDES.map((guide) => ({
     url: `${SITE_URL}/guides/${guide.slug}`,
     lastModified: new Date(guide.publishedOn),
@@ -29,5 +38,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...productRoutes, ...guideRoutes];
+  return [...staticRoutes, ...productRoutes, ...comparisonRoutes, ...guideRoutes];
 }

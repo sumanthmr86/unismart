@@ -7,6 +7,7 @@ import {
   MinusCircle,
   RefreshCw,
   ShoppingBag,
+  Swords,
   ThumbsDown,
   ThumbsUp,
 } from 'lucide-react';
@@ -21,6 +22,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { ProductGrid } from '@/components/ProductGrid';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { getCategoryName } from '@/data/categories';
+import { getComparisonsForProduct } from '@/data/comparisons';
 import { getProductBySlug } from '@/data/products';
 import { PRODUCTS } from '@/data/products';
 import { GUIDES } from '@/data/guides';
@@ -75,6 +77,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
   const relatedProducts = getRelatedProducts(product, 4);
   const relatedGuides = getRelatedGuides(product.category, '', 3);
   const categoryName = getCategoryName(product.category);
+  const comparisons = getComparisonsForProduct(product.id);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -199,6 +202,37 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                 {product.description}
               </p>
             </div>
+
+            {comparisons.length > 0 && (
+              <div className="mt-8 rounded-2xl border border-indigo-100 bg-indigo-50/50 p-5">
+                <h2 className="flex items-center gap-2 font-display text-sm font-bold text-slate-900">
+                  <Swords className="h-4 w-4 text-indigo-600" aria-hidden="true" />
+                  Head-to-head comparison
+                </h2>
+                <ul className="mt-3 space-y-2">
+                  {comparisons.map((comparison) => {
+                    const otherId = comparison.productIds.find((id) => id !== product.id);
+                    const other = otherId ? getProductBySlug(otherId) : undefined;
+                    if (!other) return null;
+                    return (
+                      <li key={comparison.id}>
+                        <Link
+                          href={`/vs/${comparison.slug}`}
+                          className="group flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 transition-shadow hover:shadow-card"
+                        >
+                          <span className="text-sm font-semibold text-slate-800 group-hover:text-indigo-600">
+                            {product.brand} vs {other.brand}
+                          </span>
+                          <span className="text-xs text-slate-400">
+                            see verdict
+                          </span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
 
