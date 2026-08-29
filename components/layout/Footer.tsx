@@ -6,6 +6,7 @@ import { SITE_NAME } from '@/lib/site';
 
 const exploreLinks = [
   { href: '/products', label: 'All products' },
+  { href: '/best', label: 'Best picks & roundups' },
   { href: '/deals', label: 'Today’s deals' },
   { href: '/guides', label: 'Buying guides' },
   { href: '/compare', label: 'Compare products' },

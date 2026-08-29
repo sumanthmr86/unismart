@@ -2,12 +2,14 @@ import type { MetadataRoute } from 'next';
 import { COMPARISONS } from '@/data/comparisons';
 import { PRODUCTS } from '@/data/products';
 import { GUIDES } from '@/data/guides';
+import { ROUNDUPS } from '@/data/roundups';
 import { SITE_URL } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: SITE_URL, changeFrequency: 'daily', priority: 1 },
     { url: `${SITE_URL}/products`, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${SITE_URL}/best`, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${SITE_URL}/vs`, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${SITE_URL}/deals`, changeFrequency: 'daily', priority: 0.8 },
     { url: `${SITE_URL}/guides`, changeFrequency: 'weekly', priority: 0.7 },
@@ -21,6 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const productRoutes: MetadataRoute.Sitemap = PRODUCTS.map((product) => ({
     url: `${SITE_URL}/products/${product.slug}`,
     changeFrequency: 'daily',
+    priority: 0.8,
+  }));
+
+  const roundupRoutes: MetadataRoute.Sitemap = ROUNDUPS.map((roundup) => ({
+    url: `${SITE_URL}/best/${roundup.slug}`,
+    changeFrequency: 'weekly',
     priority: 0.8,
   }));
 
@@ -38,5 +46,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...productRoutes, ...comparisonRoutes, ...guideRoutes];
+  return [
+    ...staticRoutes,
+    ...productRoutes,
+    ...roundupRoutes,
+    ...comparisonRoutes,
+    ...guideRoutes,
+  ];
 }

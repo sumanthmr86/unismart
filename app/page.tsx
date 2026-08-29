@@ -1,4 +1,4 @@
-import { BellRing, Scale, Search, ShieldCheck, Sparkles, Swords, TrendingDown } from 'lucide-react';
+import { BellRing, Scale, Search, ShieldCheck, Sparkles, Swords, TrendingDown, Trophy } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { BuyingGuide } from '@/lib/types';
@@ -12,6 +12,7 @@ import { Newsletter } from '@/components/Newsletter';
 import { CATEGORIES } from '@/data/categories';
 import { COMPARISONS } from '@/data/comparisons';
 import { GUIDES } from '@/data/guides';
+import { ROUNDUPS } from '@/data/roundups';
 import { getProductBySlug } from '@/data/products';
 import { EXAMPLE_SEARCHES, SITE_DESCRIPTION, SITE_NAME } from '@/lib/site';
 import { getFeaturedDeals, getFeaturedProducts } from '@/lib/products';
@@ -71,6 +72,7 @@ export default function HomePage() {
         }}
       />
       <ComparisonsSection comparisons={comparisons} />
+      <BestPicksSection />
       <GuidesSection guides={guides} />
       <HowItWorksSection />
       <NewsletterSection />
@@ -236,6 +238,44 @@ function ComparisonsSection({
               </p>
               <p className="mt-3 text-xs font-semibold text-indigo-600">
                 {comparison.picks[0]?.label}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function BestPicksSection() {
+  const roundups = ROUNDUPS.slice(0, 6);
+  return (
+    <section className="py-16 sm:py-20" aria-labelledby="best-picks-heading">
+      <div className="container-page">
+        <SectionHeading
+          eyebrow="Best-of roundups"
+          title="Best picks in every budget"
+          subtitle="Top earbuds, laptops, smartwatches and more — ranked by UniSmart Score with live Amazon prices."
+          href="/best"
+        />
+        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          {roundups.map((roundup) => (
+            <Link
+              key={roundup.slug}
+              href={`/best/${roundup.slug}`}
+              className="card group flex h-full flex-col p-5 transition-shadow hover:shadow-elevate"
+            >
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-indigo-600">
+                <Trophy className="h-4 w-4" aria-hidden="true" />
+                {roundup.maxPrice !== undefined
+                  ? `Under ₹${roundup.maxPrice.toLocaleString('en-IN')}`
+                  : 'Top picks'}
+              </span>
+              <h3 className="mt-2 font-display text-base font-bold leading-snug text-slate-900 transition-colors group-hover:text-indigo-600">
+                {roundup.title}
+              </h3>
+              <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-600">
+                {roundup.metaDescription}
               </p>
             </Link>
           ))}

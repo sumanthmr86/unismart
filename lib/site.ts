@@ -6,6 +6,7 @@ export const SITE_URL = 'https://unismart.store';
 
 export const NAV_LINKS = [
   { href: '/products', label: 'Products' },
+  { href: '/best', label: 'Best Picks' },
   { href: '/vs', label: 'Comparisons' },
   { href: '/deals', label: 'Deals' },
   { href: '/guides', label: 'Buying Guides' },
