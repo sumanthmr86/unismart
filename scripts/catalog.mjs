@@ -43,9 +43,23 @@ if (existsSync(livePricesPath)) livePrices = JSON.parse(readFileSync(livePricesP
 let autoProducts = [];
 if (existsSync(autoProductsPath)) autoProducts = JSON.parse(readFileSync(autoProductsPath, 'utf8'));
 
+const productsTsPath = path.join(root, 'data', 'products.ts');
+const curatedNames = existsSync(productsTsPath)
+  ? [...readFileSync(productsTsPath, 'utf8').matchAll(/^\s*name:\s*'([^']+)'/gm)].map(
+      (match) => match[1],
+    )
+  : [];
+
+const normalizeTitle = (title) =>
+  title.toLowerCase().replace(/\s+/g, ' ').trim();
+
 const allAsins = new Set(Object.values(asins));
 const seenNew = new Map();
 const slugSet = new Set([...Object.keys(asins), ...autoProducts.map((p) => p.slug)]);
+const titleSet = new Set([
+  ...autoProducts.map((p) => normalizeTitle(p.name)),
+  ...curatedNames.map(normalizeTitle),
+]);
 
 function isBotBlocked(html) {
   return BOT_MARKERS.some((marker) => html.includes(marker));
@@ -178,7 +192,44 @@ function buildProduct(record, queryConfig, slug) {
 
 async function main() {
   const dryRun = process.argv.includes('--dry-run');
+  const dedupe = process.argv.includes('--dedupe');
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  if (dedupe) {
+    const before = autoProducts.length;
+    const keptByTitle = new Map();
+    for (const product of autoProducts) {
+      const key = normalizeTitle(product.name);
+      const existing = keptByTitle.get(key);
+      if (!existing) {
+        keptByTitle.set(key, product);
+        continue;
+      }
+      if (product.ratingCount > existing.ratingCount) {
+        keptByTitle.set(key, product);
+      }
+    }
+    const kept = [...keptByTitle.values()];
+    const dropped = autoProducts.filter((p) => !kept.includes(p));
+    autoProducts = kept;
+
+    for (const drop of dropped) {
+      delete asins[drop.slug];
+      delete livePrices[drop.slug];
+    }
+
+    console.log(`Dedupe: ${before} -> ${autoProducts.length} products (${dropped.length} variants removed).`);
+    if (dryRun) {
+      console.log('Dry run — nothing was written.');
+      return;
+    }
+    writeFileSync(autoProductsPath, `${JSON.stringify(autoProducts, null, 2)}\n`, 'utf8');
+    writeFileSync(asinsPath, `${JSON.stringify(asins, null, 2)}\n`, 'utf8');
+    writeFileSync(livePricesPath, `${JSON.stringify(livePrices, null, 2)}\n`, 'utf8');
+    console.log('Saved deduped auto-products.json, amazon-asins.json and live-prices.json.');
+    return;
+  }
+
   const startedWith = autoProducts.length;
 
   console.log(`Catalog importer — ${queries.length} search terms, max ${MAX_NEW_TOTAL} new${dryRun ? ' (DRY RUN)' : ''}\n`);
@@ -236,6 +287,14 @@ async function main() {
       }
 
       let slug = record.slug;
+      const titleKey = normalizeTitle(record.name);
+      if (titleSet.has(titleKey)) {
+        skipped += 1;
+        seenNew.set(asin, slug);
+        await sleep(PRODUCT_DELAY_MS);
+        continue;
+      }
+      titleSet.add(titleKey);
       if (slugSet.has(slug)) {
         const base = slug;
         let suffix = 2;
