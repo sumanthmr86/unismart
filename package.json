@@ -8,7 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "sync:prices": "node scripts/sync-prices.mjs",
+    "sync:prices:verify": "node scripts/verify-parser.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

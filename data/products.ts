@@ -1,28 +1,34 @@
 import type { Product } from '@/lib/types';
 import { amazonUrl } from '@/lib/affiliate';
+import amazonAsins from '@/data/amazon-asins.json';
+import livePrices from '@/data/live-prices.json';
 
-const AMAZON_ASINS: Record<string, string> = {
-  'hp-victus-15': 'B0G46HR61G',
-  'boat-airdopes-141': 'B09N3ZNHTY',
-  'redmi-pad-se': 'B0FBRS76BR',
-  'lenovo-ideapad-slim-3': 'B0F637DPFW',
-  'oneplus-nord-buds-3': 'B0DFQ1R3W4',
-  'realme-buds-air-8-pro': 'B0H2D1CGQG',
-  'logitech-pebble-2-m350s': 'B0CGCZHGW1',
-  'amazonbasics-laptop-sleeve-15-6': 'B0CPJ7TKSB',
-  'skybags-brat-backpack': 'B0H6JP1SM4',
-  'american-tourister-30l-backpack': 'B0C65ZF9SP',
-  'xiaomi-power-bank-5i-20000': 'B0H74SZKHV',
-  'ambrane-65w-gan-charger': 'B0CHJ3X3VM',
-  'wipro-garnet-led-desk-lamp': 'B07C9KQ7KR',
-  'logitech-mk235-combo': 'B01FVV4GC0',
-  'lg-24ml600s-monitor': 'B0GMQLQGFW',
-  'samsung-galaxy-tab-a11-plus': 'B0G1C13SB3',
-  'prestige-electric-kettle-1-5l': 'B01MQZ7J8K',
-  'havells-extension-board-4-socket': 'B08HYPH6JQ',
-  'classmate-notebook-pack': 'B00J4YG0PC',
-  'pilot-v5-pens-pack-10': 'B08JV9RK68',
-};
+const AMAZON_ASINS: Record<string, string> = amazonAsins as Record<string, string>;
+
+interface LivePriceEntry {
+  priceInr: number;
+  previousPriceInr: number;
+  updatedAt: string;
+}
+
+const LIVE_PRICES = (livePrices as Record<string, LivePriceEntry>) ?? {};
+
+function withLivePrices(products: Product[]): Product[] {
+  return products.map((product) => {
+    const live = LIVE_PRICES[product.slug];
+    if (!live || typeof live.priceInr !== 'number' || live.priceInr <= 0) {
+      return product;
+    }
+    return {
+      ...product,
+      priceInr: live.priceInr,
+      previousPriceInr:
+        typeof live.previousPriceInr === 'number' && live.previousPriceInr > 0
+          ? live.previousPriceInr
+          : product.previousPriceInr,
+    };
+  });
+}
 
 function searchUrl(retailerId: string, query: string): string {
   const q = encodeURIComponent(query);
@@ -48,7 +54,7 @@ function dealUrl(retailerId: string, slug: string): string {
   return searchUrl(retailerId, slug.replace(/-/g, ' '));
 }
 
-export const PRODUCTS: Product[] = [
+const baseProducts: Product[] = [
   {
     id: 'hp-victus-15',
     slug: 'hp-victus-15',
@@ -933,6 +939,8 @@ id: 'realme-buds-air-8-pro',
     featured: true,
   },
 ];
+
+export const PRODUCTS: Product[] = withLivePrices(baseProducts);
 
 export function getProductById(id: string): Product | undefined {
   return PRODUCTS.find((p) => p.id === id);
