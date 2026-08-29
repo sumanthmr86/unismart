@@ -1,33 +1,59 @@
 import type { Product } from '@/lib/types';
-import { affiliateUrl } from '@/lib/affiliate';
+import { amazonUrl } from '@/lib/affiliate';
 
-function dealUrl(retailerId: string, slug: string) {
-  return affiliateUrl(retailerId, slug);
+const AMAZON_ASINS: Record<string, string> = {
+  'hp-victus-15': 'B0G46HR61G',
+  'boat-airdopes-141': 'B09N3ZNHTY',
+  'redmi-pad-se': 'B0FBRS76BR',
+};
+
+function searchUrl(retailerId: string, query: string): string {
+  const q = encodeURIComponent(query);
+  switch (retailerId) {
+    case 'flipkart':
+      return `https://www.flipkart.com/search?q=${q}`;
+    case 'croma':
+      return `https://www.croma.com/search/?q=${q}`;
+    case 'reliance-digital':
+      return `https://www.reliancedigital.in/search?q=${q}`;
+    case 'vijay-sales':
+      return `https://www.vijaysales.com/search?q=${q}`;
+    default:
+      return `https://www.amazon.in/s?k=${q}&tag=${encodeURIComponent(process.env.NEXT_PUBLIC_AFFILIATE_TAG ?? 'unismart00-21')}`;
+  }
+}
+
+function dealUrl(retailerId: string, slug: string): string {
+  if (retailerId === 'amazon') {
+    const asin = AMAZON_ASINS[slug];
+    if (asin) return amazonUrl(asin);
+  }
+  return searchUrl(retailerId, slug.replace(/-/g, ' '));
 }
 
 export const PRODUCTS: Product[] = [
   {
     id: 'hp-victus-15',
     slug: 'hp-victus-15',
-    name: 'HP Victus 15 Gaming Laptop',
+    name: 'HP Smartchoice Victus 15 Gaming Laptop',
     brand: 'HP',
     category: 'laptops',
-    priceInr: 52499,
-    previousPriceInr: 58999,
-    rating: 4.4,
-    ratingCount: 2314,
+    priceInr: 94990,
+    previousPriceInr: 101199,
+    rating: 4.0,
+    ratingCount: 55,
     uniSmartScore: 8.6,
-    shortRecommendation: 'Best value gaming laptop for hostel life',
+    shortRecommendation: 'Powerful 14th-gen gaming laptop for hostel life',
     description:
-      'The HP Victus 15 is the laptop every hostel gamer ends up recommending. A 144Hz FHD display, a capable Ryzen processor and an RTX-class GPU make it great for gaming nights, coding projects and video editing alike. It is not the lightest machine, but it earns its weight.',
+      'The HP Smartchoice Victus 15 is the laptop every hostel gamer ends up recommending. A 144Hz FHD display, a 14th-gen Intel Core i5 processor and an RTX 3050 with 6GB VRAM make it great for gaming nights, coding projects and video editing alike. It is not the lightest machine, but it earns its weight.',
     specs: [
-      { label: 'Display', value: '15.6" FHD IPS, 144Hz' },
-      { label: 'Processor', value: 'AMD Ryzen 5 7540U' },
-      { label: 'Graphics', value: 'NVIDIA GeForce RTX 2050 (4GB)' },
-      { label: 'RAM', value: '16GB DDR5' },
+      { label: 'Display', value: '15.6" FHD IPS, 144Hz, 300 nits' },
+      { label: 'Processor', value: 'Intel Core i5-14450HX (10 cores, 16 threads)' },
+      { label: 'Graphics', value: 'NVIDIA GeForce RTX 3050 (6GB)' },
+      { label: 'RAM', value: '24GB DDR5' },
       { label: 'Storage', value: '512GB NVMe SSD' },
-      { label: 'Battery', value: '52.5Wh, 135W adapter' },
-      { label: 'Weight', value: '2.29 kg' },
+      { label: 'Operating system', value: 'Windows 11 Home + Office 2024' },
+      { label: 'Weight', value: '2.3 kg' },
     ],
     pros: [
       'Smooth 144Hz display for the price',
@@ -45,7 +71,7 @@ export const PRODUCTS: Product[] = [
       '8+ hour battery life on the go',
     ],
     deals: [
-      { retailer: 'amazon', url: dealUrl('amazon', 'hp-victus-15'), priceInr: 52499, note: 'Best live deal on Amazon India' },
+      { retailer: 'amazon', url: dealUrl('amazon', 'hp-victus-15'), priceInr: 94990, note: 'Best live deal on Amazon India' },
       { retailer: 'flipkart', url: dealUrl('flipkart', 'hp-victus-15'), note: 'Check exchange offers on Flipkart' },
     ],
     reviews: [
@@ -107,7 +133,7 @@ export const PRODUCTS: Product[] = [
     name: 'boAt Airdopes 141 TWS Earbuds',
     brand: 'boAt',
     category: 'audio',
-    priceInr: 1099,
+    priceInr: 999,
     previousPriceInr: 3990,
     rating: 4.1,
     ratingCount: 85422,
@@ -132,7 +158,7 @@ export const PRODUCTS: Product[] = [
     ],
     notIdealFor: ['Audiophiles', 'People who take lots of calls in noisy places'],
     deals: [
-      { retailer: 'amazon', url: dealUrl('amazon', 'boat-airdopes-141'), priceInr: 1099, note: 'Deep discount live on Amazon India' },
+      { retailer: 'amazon', url: dealUrl('amazon', 'boat-airdopes-141'), priceInr: 999, note: 'Deep discount live on Amazon India' },
       { retailer: 'flipkart', url: dealUrl('flipkart', 'boat-airdopes-141'), note: 'Compare price on Flipkart' },
       { retailer: 'croma', url: dealUrl('croma', 'boat-airdopes-141'), note: 'Buy in-store at Croma' },
     ],
@@ -613,24 +639,24 @@ export const PRODUCTS: Product[] = [
   {
     id: 'redmi-pad-se',
     slug: 'redmi-pad-se',
-    name: 'Redmi Pad SE 11"',
+    name: 'Redmi Pad 2 11" 2.5K Tablet',
     brand: 'Redmi',
     category: 'tablets',
-    priceInr: 10999,
-    previousPriceInr: 13999,
+    priceInr: 18999,
+    previousPriceInr: 18999,
     rating: 4.3,
     ratingCount: 21450,
     uniSmartScore: 8.1,
-    shortRecommendation: 'Best tablet for notes, Netflix and PDFs',
+    shortRecommendation: 'Sharp 2.5K display tablet for notes, PDFs and Netflix',
     description:
-      'The Redmi Pad SE is the answer to "should I buy a tablet?" for most students. A big 11-inch screen, loud speakers and a battery that outlasts your day make it ideal for reading PDFs, taking notes and winding down with a movie.',
+      'The Redmi Pad 2 is the answer to "should I buy a tablet?" for most students. A big 11-inch 2.5K display, loud speakers and a battery that outlasts your day make it ideal for reading PDFs, taking notes and winding down with a movie.',
     specs: [
-      { label: 'Display', value: '11" FHD, 90Hz' },
-      { label: 'Processor', value: 'Snapdragon 680' },
+      { label: 'Display', value: '11" (27.94cm) 2.5K, 90Hz' },
+      { label: 'Processor', value: 'MediaTek Helio G100 Ultra' },
       { label: 'RAM / storage', value: '4GB / 128GB (expandable)' },
-      { label: 'Battery', value: '8000mAh' },
-      { label: 'Speakers', value: 'Quad, Dolby Atmos' },
-      { label: 'Weight', value: '490g' },
+      { label: 'Battery', value: '9340mAh' },
+      { label: 'Operating system', value: 'HyperOS 2' },
+      { label: 'Connectivity', value: 'Wi-Fi model, Dolby Atmos' },
     ],
     pros: [
       'Big, sharp display',
@@ -645,7 +671,7 @@ export const PRODUCTS: Product[] = [
     ],
     notIdealFor: ['Replacing a laptop for coding', 'Heavy gaming'],
     deals: [
-      { retailer: 'amazon', url: dealUrl('amazon', 'redmi-pad-se'), priceInr: 10999, note: 'Amazon India deal' },
+      { retailer: 'amazon', url: dealUrl('amazon', 'redmi-pad-se'), priceInr: 18999, note: 'Amazon India price' },
       { retailer: 'flipkart', url: dealUrl('flipkart', 'redmi-pad-se'), note: 'Check Flipkart bank offers' },
     ],
     reviews: [

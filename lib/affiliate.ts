@@ -24,8 +24,16 @@ export function retailerName(id: string): string {
 const AFFILIATE_BASE_URL =
   process.env.NEXT_PUBLIC_AFFILIATE_BASE_URL ?? 'https://unismart.store/go';
 
+const DEFAULT_TAG =
+  process.env.NEXT_PUBLIC_AFFILIATE_TAG ?? 'unismart00-21';
+
 export function affiliateUrl(retailerId: string, productSlug: string): string {
   const tag = process.env.NEXT_PUBLIC_AFFILIATE_TAG ?? '';
   const base = `${AFFILIATE_BASE_URL}/${retailerId}/${productSlug}`;
   return tag ? `${base}?tag=${encodeURIComponent(tag)}` : base;
+}
+
+export function amazonUrl(asin: string): string {
+  const tag = process.env.NEXT_PUBLIC_AFFILIATE_TAG ?? DEFAULT_TAG;
+  return `https://www.amazon.in/dp/${asin}?tag=${encodeURIComponent(tag)}`;
 }
