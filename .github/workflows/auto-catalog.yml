@@ -1,0 +1,42 @@
+name: Auto-catalog from Amazon
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Weekly on Mondays at 09:11 IST
+    - cron: '11 3 * * 1'
+
+permissions:
+  contents: write
+
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Pull new products from Amazon search
+        run: node scripts/catalog.mjs
+
+      - name: Commit new products if any
+        run: |
+          if git diff --quiet data/auto-products.json data/amazon-asins.json data/live-prices.json; then
+            echo "No new products — nothing to commit."
+          else
+            git config user.name "unismart-price-bot"
+            git config user.email "price-bot@unismart.store"
+            git add data/auto-products.json data/amazon-asins.json data/live-prices.json
+            git commit -m "chore(catalog): auto-add new products from Amazon"
+            git push
+            echo "New products committed and deployment triggered."
+          fi

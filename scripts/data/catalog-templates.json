@@ -1,0 +1,42 @@
+{
+  "laptops": {
+    "bestFor": ["Daily college work and web use", "Media, projects and light coding"],
+    "notIdealFor": ["Heavy gaming without a dedicated GPU — check specs"]
+  },
+  "audio": {
+    "bestFor": ["Everyday listening on a budget", "Commutes, hostels and lecture playback"],
+    "notIdealFor": ["Audiophiles after studio-grade detail"]
+  },
+  "backpacks": {
+    "bestFor": ["Daily college commute", "Keeping a laptop and books organised"],
+    "notIdealFor": ["Heavy trekking loads — check capacity and straps"]
+  },
+  "power-charging": {
+    "bestFor": ["Topping up devices around campus", "Hostel sockets and travel"],
+    "notIdealFor": ["Specialist setups beyond phones, laptops and tablets"]
+  },
+  "study-setup": {
+    "bestFor": ["Cleaner desks and better posture", "Long study hours"],
+    "notIdealFor": ["Studio-grade setups needing specialised equipment"]
+  },
+  "hostel-essentials": {
+    "bestFor": ["Hostel and PG life", "Quick meals and small spaces"],
+    "notIdealFor": ["Large families or heavy cookloads"]
+  },
+  "tablets": {
+    "bestFor": ["Reading, notes and media", "A light companion to your laptop"],
+    "notIdealFor": ["Replacing a laptop for heavy work"]
+  },
+  "monitors": {
+    "bestFor": ["A second screen for study and projects", "Long days in front of a screen"],
+    "notIdealFor": ["Colour-critical design work — check the panel type"]
+  },
+  "stationery": {
+    "bestFor": ["Everyday note-taking", "Packed semesters"],
+    "notIdealFor": ["Archival or collector use"]
+  },
+  "accessories": {
+    "bestFor": ["Wearable convenience on campus", "Fitness and notifications"],
+    "notIdealFor": ["Medical-grade tracking"]
+  }
+}

@@ -2,6 +2,7 @@ import type { Product } from '@/lib/types';
 import { amazonUrl } from '@/lib/affiliate';
 import amazonAsins from '@/data/amazon-asins.json';
 import livePrices from '@/data/live-prices.json';
+import autoProductsJson from '@/data/auto-products.json';
 
 const AMAZON_ASINS: Record<string, string> = amazonAsins as Record<string, string>;
 
@@ -941,7 +942,16 @@ id: 'realme-buds-air-8-pro',
   },
 ];
 
-export const PRODUCTS: Product[] = withLivePrices(baseProducts);
+export const PRODUCTS: Product[] = withLivePrices([
+  ...baseProducts,
+  ...(autoProductsJson as Product[]),
+]);
+
+const CURATED_SLUGS = new Set(baseProducts.map((product) => product.slug));
+
+export function isCuratedProduct(product: Product): boolean {
+  return CURATED_SLUGS.has(product.slug);
+}
 
 export function getProductById(id: string): Product | undefined {
   return PRODUCTS.find((p) => p.id === id);

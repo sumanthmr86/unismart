@@ -342,7 +342,11 @@ async function main() {
   console.log('(category, UniSmart Score, description, pros/cons, reviews) and publish them.');
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+}
+
+export { pullOne, slugify, extractAsinFromText, strip };

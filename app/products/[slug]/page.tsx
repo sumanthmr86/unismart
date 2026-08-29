@@ -78,6 +78,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
   const relatedGuides = getRelatedGuides(product.category, '', 3);
   const categoryName = getCategoryName(product.category);
   const comparisons = getComparisonsForProduct(product.id);
+  const showProsCons = product.pros.length > 0 || product.cons.length > 0;
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -265,41 +266,47 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             </div>
           </section>
 
+          {showProsCons && (
           <section className="lg:col-span-2" aria-labelledby="pros-cons-heading">
             <h2 id="pros-cons-heading" className="font-display text-xl font-bold text-slate-900">
               Pros &amp; cons
             </h2>
             <div className="mt-4 grid gap-4">
-              <div className="rounded-2xl rounded-tl-none border border-emerald-100 bg-emerald-50/60 p-5">
-                <h3 className="flex items-center gap-2 text-sm font-bold text-emerald-900">
-                  <ThumbsUp className="h-4 w-4 text-emerald-600" aria-hidden="true" />
-                  Pros
-                </h3>
-                <ul className="mt-3 space-y-2.5">
-                  {product.pros.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" aria-hidden="true" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="rounded-2xl rounded-tl-none border border-rose-100 bg-rose-50/60 p-5">
-                <h3 className="flex items-center gap-2 text-sm font-bold text-rose-900">
-                  <ThumbsDown className="h-4 w-4 text-rose-500" aria-hidden="true" />
-                  Cons
-                </h3>
-                <ul className="mt-3 space-y-2.5">
-                  {product.cons.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                      <MinusCircle className="mt-0.5 h-4 w-4 shrink-0 text-rose-400" aria-hidden="true" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {product.pros.length > 0 && (
+                <div className="rounded-2xl rounded-tl-none border border-emerald-100 bg-emerald-50/60 p-5">
+                  <h3 className="flex items-center gap-2 text-sm font-bold text-emerald-900">
+                    <ThumbsUp className="h-4 w-4 text-emerald-600" aria-hidden="true" />
+                    Pros
+                  </h3>
+                  <ul className="mt-3 space-y-2.5">
+                    {product.pros.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" aria-hidden="true" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {product.cons.length > 0 && (
+                <div className="rounded-2xl rounded-tl-none border border-rose-100 bg-rose-50/60 p-5">
+                  <h3 className="flex items-center gap-2 text-sm font-bold text-rose-900">
+                    <ThumbsDown className="h-4 w-4 text-rose-500" aria-hidden="true" />
+                    Cons
+                  </h3>
+                  <ul className="mt-3 space-y-2.5">
+                    {product.cons.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
+                        <MinusCircle className="mt-0.5 h-4 w-4 shrink-0 text-rose-400" aria-hidden="true" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </section>
+        )}
         </div>
 
         <div className="mt-10 grid gap-8 sm:grid-cols-2">
@@ -334,7 +341,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
         </div>
 
         <DealsSection product={product} />
-        <ReviewsSection product={product} />
+        {product.reviews.length > 0 && <ReviewsSection product={product} />}
 
         <section className="mt-16" aria-labelledby="related-products-heading">
           <SectionHeading

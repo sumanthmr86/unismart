@@ -15,6 +15,7 @@ import { GUIDES } from '@/data/guides';
 import { getProductBySlug } from '@/data/products';
 import { EXAMPLE_SEARCHES, SITE_DESCRIPTION, SITE_NAME } from '@/lib/site';
 import { getFeaturedDeals, getFeaturedProducts } from '@/lib/products';
+import { isCuratedProduct } from '@/data/products';
 
 export const metadata: Metadata = {
   title: `${SITE_NAME} — Smart choices. Better prices.`,
@@ -50,7 +51,7 @@ const steps = [
 
 export default function HomePage() {
   const featured = getFeaturedProducts().slice(0, 8);
-  const deals = getFeaturedDeals().slice(0, 8);
+  const deals = getFeaturedDeals().filter(isCuratedProduct).slice(0, 8);
   const guides = GUIDES.slice(0, 6);
   const comparisons = COMPARISONS.slice(0, 3);
 

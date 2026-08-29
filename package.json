@@ -11,7 +11,9 @@
     "typecheck": "tsc --noEmit",
     "sync:prices": "node scripts/sync-prices.mjs",
     "sync:prices:verify": "node scripts/verify-parser.mjs",
-    "pull:products": "node scripts/pull-products.mjs"
+    "pull:products": "node scripts/pull-products.mjs",
+    "catalog": "node scripts/catalog.mjs",
+    "catalog:dry": "node scripts/catalog.mjs --dry-run"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
