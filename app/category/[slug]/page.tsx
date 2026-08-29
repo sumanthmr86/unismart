@@ -15,7 +15,7 @@ import { getProductsByCategory } from '@/lib/products';
 import { SITE_URL } from '@/lib/site';
 import type { CategoryId } from '@/lib/types';
 
-interface CategoryPageProps {
+interface CategoryPageParams {
   params: Promise<{ slug: string }>;
 }
 
@@ -27,7 +27,7 @@ export function generateStaticParams() {
 
 export function generateMetadata({
   params,
-}: CategoryPageProps): Promise<Metadata> {
+}: CategoryPageParams): Promise<Metadata> {
   return params.then(({ slug }) => {
     const category = CATEGORIES.find((c) => c.id === slug);
     if (!category) return {};
@@ -42,7 +42,7 @@ export function generateMetadata({
 
 export default async function CategoryPage({
   params,
-}: CategoryPageProps) {
+}: CategoryPageParams) {
   const { slug } = await params;
   const category = CATEGORIES.find((c) => c.id === slug);
   if (!category) notFound();
