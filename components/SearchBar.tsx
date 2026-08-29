@@ -165,7 +165,7 @@ export function SearchBar({
                       className="flex items-center gap-3 px-4 py-2.5 transition hover:bg-indigo-50/60"
                     >
                       <img
-                        src={productPlaceholder(product.name, product.category)}
+                        src={product.image ?? productPlaceholder(product.name, product.category)}
                         alt=""
                         className="h-9 w-12 shrink-0 rounded-lg object-cover"
                       />

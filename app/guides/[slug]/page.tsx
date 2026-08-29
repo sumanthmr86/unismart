@@ -128,7 +128,7 @@ export default async function GuideDetailPage({ params }: GuidePageProps) {
                   </div>
                   <Link href={`/products/${product.slug}`} className="group flex gap-3">
                     <img
-                      src={productPlaceholder(product.name, product.category)}
+                      src={product.image ?? productPlaceholder(product.name, product.category)}
                       alt=""
                       className="h-14 w-[68px] shrink-0 rounded-xl object-cover"
                     />

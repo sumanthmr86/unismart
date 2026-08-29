@@ -43,6 +43,7 @@ export const PRODUCTS: Product[] = [
     rating: 4.0,
     ratingCount: 55,
     uniSmartScore: 8.6,
+    image: 'https://m.media-amazon.com/images/I/71ESz+ewFFL._SL1500_.jpg',
     shortRecommendation: 'Powerful 14th-gen gaming laptop for hostel life',
     description:
       'The HP Smartchoice Victus 15 is the laptop every hostel gamer ends up recommending. A 144Hz FHD display, a 14th-gen Intel Core i5 processor and an RTX 3050 with 6GB VRAM make it great for gaming nights, coding projects and video editing alike. It is not the lightest machine, but it earns its weight.',
@@ -138,6 +139,7 @@ export const PRODUCTS: Product[] = [
     rating: 4.1,
     ratingCount: 85422,
     uniSmartScore: 7.2,
+    image: 'https://m.media-amazon.com/images/I/71RFdy6y6LL._SL1500_.jpg',
     shortRecommendation: 'Cheap daily earbuds with a signature bass sound',
     description:
       'The Airdopes 141 is the earbud you buy when you just want music to play and calls to work, without overthinking it. Punchy bass, a pocketable case and ridiculous sale price make it the default cheap pick for campus life.',
@@ -647,6 +649,7 @@ export const PRODUCTS: Product[] = [
     rating: 4.3,
     ratingCount: 21450,
     uniSmartScore: 8.1,
+    image: 'https://m.media-amazon.com/images/I/71XIM211EkL._SL1500_.jpg',
     shortRecommendation: 'Sharp 2.5K display tablet for notes, PDFs and Netflix',
     description:
       'The Redmi Pad 2 is the answer to "should I buy a tablet?" for most students. A big 11-inch 2.5K display, loud speakers and a battery that outlasts your day make it ideal for reading PDFs, taking notes and winding down with a movie.',

@@ -36,7 +36,7 @@ export function ProductCard({
           aria-label={product.name}
         >
           <img
-            src={productPlaceholder(product.name, product.category)}
+            src={product.image ?? productPlaceholder(product.name, product.category)}
             alt={`${product.name} — demo product image`}
             width={640}
             height={480}

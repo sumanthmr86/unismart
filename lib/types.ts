@@ -54,6 +54,7 @@ export interface Product {
   notIdealFor: string[];
   deals: Deal[];
   reviews: DemoReview[];
+  image?: string;
   featured?: boolean;
   deal?: boolean;
 }

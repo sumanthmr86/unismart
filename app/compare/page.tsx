@@ -122,7 +122,7 @@ export default function ComparePage() {
                         className="flex items-center gap-3"
                       >
                         <img
-                          src={productPlaceholder(product.name, product.category)}
+                          src={product.image ?? productPlaceholder(product.name, product.category)}
                           alt=""
                           className="h-12 w-16 shrink-0 rounded-xl object-cover"
                         />

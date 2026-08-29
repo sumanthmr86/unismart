@@ -118,7 +118,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
           <div className="lg:sticky lg:top-24 lg:self-start">
             <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-card">
               <img
-                src={productPlaceholder(product.name, product.category)}
+                src={product.image ?? productPlaceholder(product.name, product.category)}
                 alt={`${product.name} — demo product image`}
                 width={640}
                 height={480}

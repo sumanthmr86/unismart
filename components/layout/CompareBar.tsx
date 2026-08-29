@@ -42,7 +42,7 @@ export function CompareBar() {
               className="flex shrink-0 items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-2 py-1 text-xs font-medium text-slate-700 transition hover:border-indigo-300 hover:text-indigo-700"
             >
               <img
-                src={productPlaceholder(p.name, p.category)}
+                src={p.image ?? productPlaceholder(p.name, p.category)}
                 alt=""
                 className="h-6 w-8 rounded object-cover"
               />
