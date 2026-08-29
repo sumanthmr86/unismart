@@ -25,7 +25,7 @@ import { PRODUCTS } from '@/data/products';
 import { GUIDES } from '@/data/guides';
 import { getRelatedGuides, getRelatedProducts } from '@/lib/products';
 import { retailerName } from '@/lib/affiliate';
-import { discountPercent, formatINR, savingsInr } from '@/lib/format';
+import { formatINR } from '@/lib/format';
 import { productPlaceholder } from '@/lib/placeholder';
 import { SITE_URL } from '@/lib/site';
 import type { Product } from '@/lib/types';
@@ -63,8 +63,6 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
   const relatedProducts = getRelatedProducts(product, 4);
   const relatedGuides = getRelatedGuides(product.category, '', 3);
-  const discount = discountPercent(product.priceInr, product.previousPriceInr);
-  const savings = savingsInr(product.priceInr, product.previousPriceInr);
   const categoryName = getCategoryName(product.category);
 
   const jsonLd = {
@@ -158,13 +156,6 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                 size="lg"
                 showSavings
               />
-              {discount > 0 && (
-                <div className="mt-2 flex items-center gap-2 text-sm font-medium text-emerald-600">
-                  <BadgeCheck className="h-4 w-4" aria-hidden="true" />
-                  You save {formatINR(savings)} ({discount}%) vs. the typical
-                  list price
-                </div>
-              )}
 
               <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                 <DealButton
