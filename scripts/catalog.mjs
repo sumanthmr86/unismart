@@ -230,7 +230,7 @@ function buildProduct(record, queryConfig, slug) {
   const brand = record.brand ? record.brand.slice(0, 24) : capitalizeBrand(name);
   const specs =
     queryConfig.category === 'audio'
-      ? [...derivedAudioSpecs(record.specs, name), ...record.specs].slice(0, 12)
+      ? [...derivedAudioSpecs(record.specs, record.name), ...record.specs].slice(0, 12)
       : record.specs.slice(0, 12);
   const shortRecommendation = buildShortRecommendation(
     pros,

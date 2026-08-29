@@ -140,6 +140,7 @@ export const CANONICAL_SPEC_ORDER = [
   'Water resistance',
   'Charging',
   'Driver',
+  'Low latency',
   'Noise control',
   'Camera',
   'Power',

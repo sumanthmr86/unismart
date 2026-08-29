@@ -151,8 +151,16 @@
     "ratingCount": 14312,
     "uniSmartScore": 8.1,
     "shortRecommendation": "Top-rated audio gear on Amazon India — Buds N1 Truly Wireless Earbuds with Chrome Finis",
-    "description": "Noise Buds N1 Truly Wireless Earbuds with Chrome Finish, 40H of Playtime, Quad Mic with ENC, Ultra Low Latency Gaming (Up to 40 Ms), Instacharge(10 Min=120 Min). Top-rated audio gear on Amazon India — Buds N1 Truly Wireless Earbuds with Chrome Finis. Built for the daily commute — music, calls and video lectures on the go. Backed by rated 3.7/5 and 14,312 Amazon reviews. Battery life: Up to 40 hours of total playtime. Colour: Black",
+    "description": "Noise Buds N1 Truly Wireless Earbuds with Chrome Finish, 40H of Playtime, Quad Mic with ENC, Ultra Low Latency Gaming (Up to 40 Ms), Instacharge(10 Min=120 Min). Top-rated audio gear on Amazon India — Buds N1 Truly Wireless Earbuds with Chrome Finis. Built for the daily commute — music, calls and video lectures on the go. Backed by rated 3.7/5 and 14,312 Amazon reviews. Low latency: Gaming mode, up to 40 ms. Charging: Fast charging — 10 min = 120 min of playback",
     "specs": [
+      {
+        "label": "Low latency",
+        "value": "Gaming mode, up to 40 ms"
+      },
+      {
+        "label": "Charging",
+        "value": "Fast charging — 10 min = 120 min of playback"
+      },
       {
         "label": "Battery life",
         "value": "Up to 40 hours of total playtime"
@@ -175,8 +183,8 @@
       }
     ],
     "pros": [
-      "Battery life: Up to 40 hours of total playtime",
-      "Colour: Black"
+      "Low latency: Gaming mode, up to 40 ms",
+      "Charging: Fast charging — 10 min = 120 min of playback"
     ],
     "cons": [
       "Customer reviews sit at 3.7 out of 5"
@@ -499,8 +507,12 @@
     "ratingCount": 676,
     "uniSmartScore": 8.6,
     "shortRecommendation": "Top-rated audio gear on Amazon India — Rockerz 371, 40mm Drivers, 50hrs Battery, 60ms L",
-    "description": "boAt Rockerz 371, 40mm Drivers, 50hrs Battery, 60ms Low Latency, ENx Tech, BT v5.4, Foldable Cups, Voice Assistant, Bluetooth Headphones, Wireless Headphone wit. Top-rated audio gear on Amazon India — Rockerz 371, 40mm Drivers, 50hrs Battery, 60ms L. Built for the daily commute — music, calls and video lectures on the go. Backed by rated 4.1/5 and 676 Amazon reviews. Battery life: Up to 50 hours of total playtime. Driver: 40mm dynamic driver",
+    "description": "boAt Rockerz 371, 40mm Drivers, 50hrs Battery, 60ms Low Latency, ENx Tech, BT v5.4, Foldable Cups, Voice Assistant, Bluetooth Headphones, Wireless Headphone wit. Top-rated audio gear on Amazon India — Rockerz 371, 40mm Drivers, 50hrs Battery, 60ms L. Built for the daily commute — music, calls and video lectures on the go. Backed by rated 4.1/5 and 676 Amazon reviews. Low latency: Gaming mode, up to 60 ms. Battery life: Up to 50 hours of total playtime",
     "specs": [
+      {
+        "label": "Low latency",
+        "value": "Gaming mode, up to 60 ms"
+      },
       {
         "label": "Battery life",
         "value": "Up to 50 hours of total playtime"
@@ -527,8 +539,8 @@
       }
     ],
     "pros": [
-      "Battery life: Up to 50 hours of total playtime",
-      "Driver: 40mm dynamic driver"
+      "Low latency: Gaming mode, up to 60 ms",
+      "Battery life: Up to 50 hours of total playtime"
     ],
     "cons": [],
     "bestFor": [

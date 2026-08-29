@@ -26,13 +26,26 @@ export function derivedAudioSpecs(specs, name) {
 
   const typeC = /usb[ -]?c|type[ -]?c/i.test(name);
   const fast = /fast charging/i.test(name);
-  if (typeC || fast) {
+  const insta = name.match(/instacharge\s*\(?\s*(\d+)\s*[ -]?min\s*=?\s*(\d+)\s*min/i);
+  if (insta) {
+    add(
+      'Charging',
+      `Fast charging — ${insta[1]} min = ${insta[2]} min of playback`,
+    );
+  } else if (typeC || fast) {
     add(
       'Charging',
       [fast ? 'Fast charging' : '', typeC ? 'USB Type-C' : '']
         .filter(Boolean)
         .join(', '),
     );
+  }
+
+  const lowLatency =
+    name.match(/low latency[^()]{0,40}?\(?\s*up to\s*(\d{2,})\s*ms/i) ??
+    name.match(/(?:up to\s+)?(\d{2,})\s*ms\s+(?:low\s+)?latency/i);
+  if (lowLatency) {
+    add('Low latency', `Gaming mode, up to ${lowLatency[1]} ms`);
   }
 
   return out;
