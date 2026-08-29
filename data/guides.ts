@@ -299,6 +299,144 @@ export const GUIDES: BuyingGuide[] = [
       { q: 'Can a tablet replace my laptop for engineering?', a: 'Not for coding or AutoCAD. Use it as a companion — one screen for notes, the other for the actual work.' },
     ],
   },
+  {
+    id: 'best-earbuds-for-calls',
+    slug: 'best-earbuds-for-calls',
+    title: 'Best Earbuds for Calls in India',
+    category: 'audio',
+    excerpt:
+      'If your earbuds exist for hostel WhatsApp calls and lecture recordings, pick for mics, not bass. The picks that hear you clearly.',
+    publishedOn: '2026-08-24',
+    readMinutes: 5,
+    intro:
+      'Most cheap earbuds are tuned for music and forget the "call" half of "calls-music". If long family calls, group-study syncs and morning stand-ups are your main use, mic count and clarity beat bass any day. These are the picks that keep you audible.',
+    sections: [
+      {
+        heading: 'What makes an earbud good for calls',
+        body: 'Look for two or more microphones per bud, an ENC or CVC noise-cancellation label for calls, and a stem design that places mics closer to your mouth. IPX4 helps when you take calls on the walk to class.',
+      },
+      {
+        heading: 'Best value with real mics: OnePlus Nord Buds 3r',
+        body: 'Dual microphones with clear-call processing make the 3r a sleeper pick for voice. The 54-hour total battery means one charge covers a full week of calls and music.',
+        productIds: ['oneplus-nord-buds-3r-tws-earbuds-up-to-54'],
+      },
+      {
+        heading: 'Quad-mic champion: Noise Buds N1',
+        body: 'Quad-mic with ENC call processing is exactly what a noisy hostel needs — the N1 shrinks background chatter so your voice comes through. It is also the smallest budget footprint in this list.',
+        productIds: ['noise-buds-n1-truly-wireless-earbuds-with-chrome-finish'],
+      },
+      {
+        heading: 'When call clarity is the whole budget',
+        body: 'The Nord Buds 3 adds real call-mic tech to real noise cancellation under ₹2,000. If you take calls in buses and libraries, the mic separation is worth the small stretch.',
+        productIds: ['oneplus-nord-buds-3'],
+      },
+    ],
+    picks: [
+      { label: 'Best Overall Calls', productId: 'oneplus-nord-buds-3', reason: 'Real ANC plus dependable call mics under ₹2,000.' },
+      { label: 'Best Value', productId: 'oneplus-nord-buds-3r-tws-earbuds-up-to-54', reason: 'Dual mics, clear-call processing, 54-hour battery.' },
+      { label: 'Best Budget Mics', productId: 'noise-buds-n1-truly-wireless-earbuds-with-chrome-finish', reason: 'Quad mics with ENC at a very low price.' },
+    ],
+    tips: [
+      'Test call quality with a friend before the return window closes — mic quality is marketed, not guaranteed.',
+      'Buds with stems sit the mics closer to your mouth than bullet-style buds.',
+      'If your phone has two mics, prefer a pair that does not clash with the phone\'s own noise cancellation.',
+    ],
+    faq: [
+      { q: 'Do earbuds with ANC also muffle my voice on calls?', a: 'ANC cancels noise going INTO your ear; ENC/CVC cancels noise coming out of your mic. Both help, but on a bus the ENC number decides whether people hear you.' },
+      { q: 'Is a neckband better than earbuds for calls?', a: 'Neckbands put mics near your collar, which often sounds better indoors — but earbuds with quad mics now match them outdoors.' },
+    ],
+  },
+  {
+    id: 'best-budget-smartwatches',
+    slug: 'best-budget-smartwatches',
+    title: 'Best Budget Smartwatches in India',
+    category: 'accessories',
+    excerpt:
+      'Notification mirror, step counter and Bluetooth calling — the smartwatches under ₹3,000 that do not feel like toys.',
+    publishedOn: '2026-08-20',
+    readMinutes: 6,
+    intro:
+      'The budget smartwatch market is crowded with indistinguishable options. This guide narrows it to watches where the screen, battery and calling actually hold up to daily campus use — so you buy once and stop scrolling.',
+    sections: [
+      {
+        heading: 'AMOLED or LCD — the first fork',
+        body: 'Above ~₹2,000 you can get an AMOLED watch with a bright, colourful always-on display — the biggest visual difference in the category. Below that, choose for battery and build instead.',
+        productIds: ['fastrack-limitless-fs2-pro-1-96-amoled-smart-watch'],
+      },
+      {
+        heading: 'Best under ₹1,600: boAt Storm Call 4',
+        body: 'Bluetooth calling and a bright screen at a price that is hard to argue with. The Storm Call 4 is the value pick for a first smartwatch that just works.',
+        productIds: ['boat-storm-call-4-india-s-first-smartwatch-with'],
+      },
+      {
+        heading: 'Best around ₹2,500: Noise Pulse 4 Max',
+        body: 'Push past ₹2,000 and budget watches get larger AMOLED displays, smoother workouts tracking and smarter health metrics. The Pulse 4 Max is the best feature-per-rupee in this tier.',
+        productIds: ['noise-pulse-4-max-smart-watch-with-ai-create'],
+      },
+      {
+        heading: 'The classic-round case: Fire-Boltt Phoenix Pro',
+        body: 'Prefer a round, classic-looking dial? The Phoenix Pro keeps the smartwatch features but looks more like a regular watch — a closer fit for formals and presentations.',
+        productIds: ['fire-boltt-phoenix-pro-round-smart-watch-1-39'],
+      },
+    ],
+    picks: [
+      { label: 'Best Under ₹1,600', productId: 'boat-storm-call-4-india-s-first-smartwatch-with', reason: 'Calling, notifications and a bright screen at a real budget price.' },
+      { label: 'Best Overall Budget', productId: 'noise-pulse-4-max-smart-watch-with-ai-create', reason: 'AMOLED display and the best feature set around ₹2,500.' },
+      { label: 'Best Classic Look', productId: 'fire-boltt-phoenix-pro-round-smart-watch-1-39', reason: 'Round dial that reads as a watch, not a gadget.' },
+    ],
+    tips: [
+      'Check which contact list syncs with calling — many watches mirror the SIM call log, which confuses dual-SIM users.',
+      'Battery claims are optimistic; expect 70-80% of the sticker figure with always-on display enabled.',
+      'Buy during sale weeks — this category routinely drops 20-30% on Amazon and Flipkart.',
+    ],
+    faq: [
+      { q: 'Is Bluetooth calling on smartwatches actually usable?', a: 'Yes for short calls in quiet places. In traffic or a noisy canteen, both sides struggle — use your phone for long conversations.' },
+      { q: 'Do budget smartwatches need their own SIM?', a: 'No — the watch uses your phone\'s SIM and Bluetooth. Only expensive standalone watches support eSIM in India.' },
+    ],
+  },
+  {
+    id: 'best-monitors-for-students',
+    slug: 'best-monitors-for-students',
+    title: 'Best Monitors for Students in India',
+    category: 'monitors',
+    excerpt:
+      'One extra screen changes how you study, code and binge — the monitors that give the most screen per rupee, explained.',
+    publishedOn: '2026-08-15',
+    readMinutes: 5,
+    intro:
+      'Every serious student hits the laptop-screen ceiling: three tabs, a notebook and the PDF that refuses to fit. A second monitor is the upgrade that fixes it — cheap, permanent and instantly noticeable. Here is how to choose and which to buy.',
+    sections: [
+      {
+        heading: '24-inch IPS is the value sweet spot',
+        body: 'For under ₹7,000 you get a 24-inch FHD IPS monitor at 100-144Hz. That is the size where you stop squinting, and IPS panels keep colours accurate for design work too.',
+        productIds: ['acer-ek240y-p6-p6-23-8-inch-ips-full'],
+      },
+      {
+        heading: 'The 27-inch upgrade',
+        body: 'If you live in spreadsheets, code or Figma, jump to 27-inch FHD IPS — the extra surface reduces scrolling by a lot. Most 27-inch FHD monitors under ₹10,000 are the same internals at a bigger price-to-inch ratio.',
+        productIds: ['lg-27u411a-bd-68-5-cm-27-inch-fhd'],
+      },
+      {
+        heading: 'Double-duty for work and play',
+        body: 'A 144Hz panel doubles as a gaming monitor between assignments. The Acer EK240Y and KA270 refresh at 144Hz while staying properly affordable for a study setup.',
+        productIds: ['acer-ka270-p6-27-inch-ips-full-hd-backlit'],
+      },
+    ],
+    picks: [
+      { label: 'Best 24-Inch', productId: 'acer-ek240y-p6-p6-23-8-inch-ips-full', reason: 'IPS, 144Hz and an unbeatable price-to-quality ratio.' },
+      { label: 'Best 27-Inch', productId: 'lg-27u411a-bd-68-5-cm-27-inch-fhd', reason: 'Bigger screen, same FHD IPS quality, budget-friendly.' },
+      { label: 'Best All-Rounder', productId: 'lg-24ml600s-monitor', reason: 'A dependable 24-inch IPS from a brand you know.' },
+    ],
+    tips: [
+      'Place the monitor at arm\'s length, top of the screen at eye level — posture is the real reason to buy.',
+      'Use one cable for everything: USB-C monitors can charge your laptop and carry video at once.',
+      'Keep the laptop lid open beside the monitor for a free third screen while studying.',
+    ],
+    faq: [
+      { q: 'Do I need 2K or 4K for study?', a: 'Not usually. FHD is crisp enough for text and coursework; 2K/4K only pull their weight for photo/video work at 27-inch and above.' },
+      { q: 'Can one monitor work with my laptop and hostel console?', a: 'Yes — if it has two HDMI ports, switch inputs via the OSD. Most budget monitors have at least one HDMI and one VGA.' },
+    ],
+  },
 ];
 
 export function getGuideBySlug(slug: string): BuyingGuide | undefined {

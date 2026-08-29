@@ -294,6 +294,129 @@ export const ROUNDUPS: Roundup[] = [
     match: ['pen'],
     exclude: ['case', 'pencil', 'box', 'notebook'],
   },
+  {
+    slug: 'smartwatches-with-bluetooth-calling',
+    category: 'accessories',
+    title: 'Best Smartwatches with Bluetooth Calling in India',
+    metaTitle: 'Best Smartwatches with Bluetooth Calling in India (2026)',
+    metaDescription:
+      'Budget smartwatches in India with real Bluetooth calling — AMOLED displays, day-long battery and built-in speakers, ranked with live prices.',
+    intro:
+      'A smartwatch with Bluetooth calling ends the "where is my phone?" shuffle during lectures — answer calls, check notifications and track steps without digging through your backpack. These are the options that handle that reliably without costing a fortune.',
+    count: 8,
+    match: ['bluetooth calling', 'bt calling', 'smartwatch', 'smart watch'],
+    note: 'Call quality depends as much on your phone\'s mic as the watch. Check that your watch supports a speaker and mic — not just "calling" by Bluetooth audio passthrough.',
+  },
+  {
+    slug: 'portable-speakers-for-hostel',
+    category: 'audio',
+    title: 'Best Portable Speakers for Hostel in India',
+    metaTitle: 'Best Portable Bluetooth Speakers in India (2026)',
+    metaDescription:
+      'The best portable Bluetooth speakers in India — loud 12-14W sound that survives hostels and study breaks, ranked with live prices.',
+    intro:
+      'One good portable speaker turns a hostel evening, a room party or a terrace jam into something actually enjoyable. The picks below prioritise real wattage and build over fake "360° bass" claims.',
+    count: 8,
+    match: ['speaker', 'bluetooth speaker'],
+    note: 'For hostel use, 10W+ output and a rechargeable battery matter most. Check the volume-limit rules in your hostel before you bring out a big one.',
+  },
+  {
+    slug: 'fast-charging-cables',
+    category: 'power-charging',
+    title: 'Best Fast Charging Cables in India',
+    metaTitle: 'Best Fast Charging Cables in India (2026)',
+    metaDescription:
+      'Best braided USB-C fast charging cables in India — 65W type-C to type-C for laptops and phones, ranked with live prices.',
+    intro:
+      'The cable is the most-abused part of your charging setup — and the one nobody budgets for until it dies. Braided, fast-charging cables here outlast hostel beds, backpack bottoms and the "have you got a type-C?" daily request.',
+    count: 8,
+    match: ['cable', 'type c', 'braided'],
+    exclude: ['charger', 'adapter', 'wireless charger', 'extension'],
+    note: 'For fast charging, match the cable to your charger: a 3A cable for phones, 65W for laptops. Braided jackets survive way more abuse than rubber ones.',
+  },
+  {
+    slug: 'extension-boards-for-hostel',
+    category: 'power-charging',
+    title: 'Best Extension Boards for Hostel in India',
+    metaTitle: 'Best Surge-Protected Extension Boards in India (2026)',
+    metaDescription:
+      'Best extension boards and surge protectors in India — 4-socket boards that survive voltage dips and hostel loads, with live prices.',
+    intro:
+      'Hostel rooms come with one socket and, somehow, three roommates. A surge-protected extension board fixes the maths AND protects your phone, laptop and chargers from voltage dips that kill adapters.',
+    count: 8,
+    match: ['extension board', 'extension cord', 'power strip', 'power plate', 'extension box'],
+    note: 'Look for surge protection (not just a multi-socket) and a long, thick cable. Avoid daisy-chaining boards — each board goes straight into the wall socket.',
+  },
+  {
+    slug: 'laptop-sleeves',
+    category: 'backpacks',
+    title: 'Best Laptop Sleeves in India',
+    metaTitle: 'Best Laptop Sleeves in India (2026)',
+    metaDescription:
+      'Best 15.6-inch laptop sleeves in India — padded sleeves with charger pouches and handles, ranked with live prices.',
+    intro:
+      'A sleeve is the cheapest insurance your laptop will ever get — it rides inside your backpack as a second, removable layer of padding, and it stops keys and textbooks from scratching the lid.',
+    count: 8,
+    match: ['sleeve'],
+    exclude: ['backpack'],
+    note: 'Buy for your exact screen size (14 vs 15.6 inch) and check for a separate charger pouch. The handle version is handy when the backpack is too full to dig around in.',
+  },
+  {
+    slug: 'study-lamps-under-1000',
+    category: 'study-setup',
+    title: 'Best Study Lamps Under ₹1,000 in India',
+    metaTitle: 'Best Study Lamps under ₹1,000 in India (2026)',
+    metaDescription:
+      'Best LED study lamps under ₹1,000 in India — flicker-free, rechargeable and eye-kind light for late-night study, ranked with live prices.',
+    intro:
+      'You do not need a premium lamp brand for good study light. Under ₹1,000 you get rechargeable LED lamps with adjustable colour modes that survive both power cuts and midnight study shifts.',
+    maxPrice: 1000,
+    count: 8,
+    match: ['lamp'],
+    note: 'In this budget, prioritise rechargeable battery and warm-white modes over extra features. Touch controls are a bonus, not a requirement.',
+  },
+  {
+    slug: 'monitors-under-10000',
+    category: 'monitors',
+    title: 'Best Monitors Under ₹10,000 in India',
+    metaTitle: 'Best Monitors under ₹10,000 in India (2026)',
+    metaDescription:
+      'Best monitors under ₹10,000 in India — 24 and 27-inch IPS displays with high refresh rates for study and side projects, with live prices.',
+    intro:
+      'A second monitor under ₹10,000 is the single biggest productivity upgrade available to a student — notes on one screen, work on the other. From 24-inch FHD workhorses to 27-inch IPS panels, these are the screen-per-rupee kings.',
+    maxPrice: 10000,
+    count: 8,
+    match: ['monitor'],
+    note: 'Prioritise IPS panels and a solid refresh rate (100Hz+) for comfortable reading. 27-inch is the size that genuinely replaces squinting at spreadsheets.',
+  },
+  {
+    slug: 'backpacks-under-1500',
+    category: 'backpacks',
+    title: 'Best Backpacks Under ₹1,500 in India',
+    metaTitle: 'Best Laptop Backpacks under ₹1,500 in India (2026)',
+    metaDescription:
+      'Best laptop backpacks under ₹1,500 in India — 15.6-inch sleeves, rain-friendly builds and room for lunch, ranked with live prices.',
+    intro:
+      'You can get a genuinely decent laptop backpack without pushing past ₹1,500 — padded laptop sleeves, organised front pockets and straps that do not dig in during a full day. These carry the classic campus load and the odd tiffin box.',
+    maxPrice: 1500,
+    count: 8,
+    match: ['backpack', 'laptop backpack'],
+    exclude: ['sleeve', 'case'],
+    note: 'Under ₹1,500 you trade a little padding for price — that is fine for a 15.6-inch ultrabook. For heavier gaming laptops, stretch to the 30L tier.',
+  },
+  {
+    slug: 'budget-coffee-makers',
+    category: 'hostel-essentials',
+    title: 'Best Budget Coffee Makers in India',
+    metaTitle: 'Best Coffee Makers in India (2026)',
+    metaDescription:
+      'Best budget coffee makers in India — drip machines and frothers for hostel and PG rooms, ranked with live prices.',
+    intro:
+      'Skip the ₹300 canteen flat whites and brew your own. Budget drip coffee makers and rechargeable frothers make proper coffee in a hostel room for a fraction of the price — and instant chai water is a fringe benefit.',
+    count: 8,
+    match: ['coffee'],
+    note: 'Check hostel wattage rules before buying a 450-600W machine — most allow it, but confirm first. A hand-frother needs no power at all and makes latte foam from any coffee.',
+  },
 ];
 
 export function getRoundupBySlug(slug: string): Roundup | undefined {
