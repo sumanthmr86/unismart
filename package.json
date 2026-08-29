@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
+    "amazon-paapi": "^1.1.0",
     "lucide-react": "^0.468.0",
     "next": "^15.5.0",
     "react": "^19.1.0",

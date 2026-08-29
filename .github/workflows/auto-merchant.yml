@@ -1,0 +1,57 @@
+name: Auto-Merchant Daily
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # 06:00 UTC daily
+  workflow_dispatch:  # manual trigger
+
+permissions:
+  contents: write
+
+env:
+  AMAZON_PA_ACCESS_KEY: ${{ secrets.AMAZON_PA_ACCESS_KEY }}
+  AMAZON_PA_SECRET_KEY: ${{ secrets.AMAZON_PA_SECRET_KEY }}
+  AMAZON_PA_PARTNER_TAG: ${{ secrets.AMAZON_PA_PARTNER_TAG }}
+  AMAZON_PA_HOST: ${{ secrets.AMAZON_PA_HOST }}
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+jobs:
+  auto-merchant:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Auto-Merchant
+        run: node scripts/auto-merchant.mjs
+        env:
+          AMAZON_PA_ACCESS_KEY: ${{ secrets.AMAZON_PA_ACCESS_KEY }}
+          AMAZON_PA_SECRET_KEY: ${{ secrets.AMAZON_PA_SECRET_KEY }}
+          AMAZON_PA_PARTNER_TAG: ${{ secrets.AMAZON_PA_PARTNER_TAG }}
+          AMAZON_PA_HOST: ${{ secrets.AMAZON_PA_HOST }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Commit & push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/auto-products.json data/archived-products.json data/amazon-asins.json
+          if ! git diff --cached --quiet; then
+            git commit -m "auto-merchant: daily refresh ($(date +'%Y-%m-%d'))"
+            git push
+          else
+            echo "No changes to commit"
+          fi
