@@ -11,6 +11,11 @@ export async function subscribeEmail(email: string): Promise<SubscribeResult> {
   }
 
   try {
+    const apiKey = process.env.BUTTONDOWN_API_KEY;
+    const tag = process.env.BUTTONDOWN_TAG?.trim();
+    const payload: { email_address: string; tags?: string[] } = { email_address: email };
+    if (tag) payload.tags = [tag];
+
     const response = await fetch(BUTTONDOWN_API_URL, {
       method: 'POST',
       headers: {
@@ -19,10 +24,7 @@ export async function subscribeEmail(email: string): Promise<SubscribeResult> {
         'X-Buttondown-Collision-Behavior': 'add',
         'X-Buttondown-Bypass-Firewall': 'true',
       },
-      body: JSON.stringify({
-        email_address: email,
-        tags: [process.env.BUTTONDOWN_TAG ?? 'unismart-web'],
-      }),
+      body: JSON.stringify(payload),
       cache: 'no-store',
     });
 
