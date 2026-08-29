@@ -14,6 +14,7 @@ import { COMPARISONS, getComparisonBySlug } from '@/data/comparisons';
 import { getProductBySlug } from '@/data/products';
 import { formatINR } from '@/lib/format';
 import { productPlaceholder } from '@/lib/placeholder';
+import { normalizeSpecLabel } from '@/lib/specs';
 import { SITE_URL } from '@/lib/site';
 import type { Product } from '@/lib/types';
 import { cn } from '@/lib/cn';
@@ -46,20 +47,27 @@ export async function generateMetadata({
 
 function mergedSpecRows(first: Product, second: Product) {
   const rows: { label: string; a: string; b: string }[] = [];
+  const seen = new Set<string>();
   const secondByLabel = new Map<string, string>();
-  for (const spec of second.specs) secondByLabel.set(spec.label, spec.value);
+  for (const spec of second.specs) {
+    secondByLabel.set(normalizeSpecLabel(spec.label), spec.value);
+  }
 
   for (const spec of first.specs) {
+    const normalized = normalizeSpecLabel(spec.label);
+    if (seen.has(normalized)) continue;
+    seen.add(normalized);
     rows.push({
-      label: spec.label,
+      label: normalized,
       a: spec.value,
-      b: secondByLabel.get(spec.label) ?? '—',
+      b: secondByLabel.get(normalized) ?? '—',
     });
   }
   for (const spec of second.specs) {
-    if (!rows.some((row) => row.label === spec.label)) {
-      rows.push({ label: spec.label, a: '—', b: spec.value });
-    }
+    const normalized = normalizeSpecLabel(spec.label);
+    if (seen.has(normalized)) continue;
+    seen.add(normalized);
+    rows.push({ label: normalized, a: '—', b: spec.value });
   }
   return rows;
 }

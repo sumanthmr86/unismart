@@ -12,6 +12,11 @@ import { ScoreBadge } from '@/components/ui/ScoreBadge';
 import { getProductById } from '@/data/products';
 import { productPlaceholder } from '@/lib/placeholder';
 import { getCategoryName } from '@/data/categories';
+import {
+  CANONICAL_SPEC_ORDER,
+  isDroppedSpecLabel,
+  normalizeSpecLabel,
+} from '@/lib/specs';
 import { cn } from '@/lib/cn';
 
 export default function ComparePage() {
@@ -38,8 +43,22 @@ export default function ComparePage() {
   }
 
   const specLabels = Array.from(
-    new Set(products.flatMap((p) => p.specs.map((s) => s.label))),
-  ).slice(0, 6);
+    new Set(
+      products
+        .flatMap((p) => p.specs.map((s) => s.label))
+        .map((label) => normalizeSpecLabel(label))
+        .filter((label) => !isDroppedSpecLabel(label)),
+    ),
+  );
+  const specOrder = new Map(
+    CANONICAL_SPEC_ORDER.map((label, index) => [label, index]),
+  );
+  const orderedSpecLabels = [
+    ...specLabels
+      .filter((label) => specOrder.has(label))
+      .sort((a, b) => specOrder.get(a)! - specOrder.get(b)!),
+    ...specLabels.filter((label) => !specOrder.has(label)),
+  ].slice(0, 6);
 
   const rowMeta = [
     { label: 'Price', render: (id: string) => renderPrice(id) },
@@ -181,7 +200,7 @@ export default function ComparePage() {
                   ))}
                 </tr>
               ))}
-              {specLabels.map((label, labelIndex) => (
+              {orderedSpecLabels.map((label, labelIndex) => (
                 <tr key={label} className={cn(labelIndex % 2 === 0 ? 'bg-white' : 'bg-slate-50/60')}>
                   <th
                     scope="row"
@@ -193,7 +212,9 @@ export default function ComparePage() {
                     {label}
                   </th>
                   {products.map((product) => {
-                    const spec = product.specs.find((s) => s.label === label);
+                    const spec = product.specs.find(
+                      (s) => normalizeSpecLabel(s.label) === label,
+                    );
                     return (
                       <td key={product.id} className="px-4 py-3.5 text-slate-700">
                         {spec?.value ?? '—'}
