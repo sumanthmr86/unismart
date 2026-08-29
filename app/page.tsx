@@ -5,7 +5,7 @@ import type { BuyingGuide } from '@/lib/types';
 import { SearchBar } from '@/components/SearchBar';
 import { ProductGrid } from '@/components/ProductGrid';
 import { DealsCarousel } from '@/components/DealsCarousel';
-import { DealOfTheDay } from '@/components/DealOfTheDay';
+import { DealOfTheDaySlider } from '@/components/DealOfTheDaySlider';
 import { CategoryCard } from '@/components/CategoryCard';
 import { GuideCard } from '@/components/GuideCard';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -60,14 +60,14 @@ export default function HomePage() {
       const pct = discountPercent(d.priceInr, d.previousPriceInr);
       return pct >= 18 && pct <= 65;
     })
-    .slice(0, 9);
+    .slice(0, 8);
   const guides = GUIDES.slice(0, 6);
   const comparisons = COMPARISONS.slice(0, 3);
 
   return (
     <>
       <HeroSection />
-      <DealOfTheDay deals={dealPool} />
+      <DealOfTheDaySlider deals={dealPool} />
       <CategoriesSection />
       <FeaturedProductsSection products={featured} />
       <DealsCarousel
