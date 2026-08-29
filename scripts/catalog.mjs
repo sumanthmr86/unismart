@@ -109,13 +109,58 @@ function friendlyCategory(category) {
   return labels[category] ?? category.replace(/-/g, ' ');
 }
 
-function buildShortRecommendation(pros, category) {
+const CATEGORY_COPY = {
+  audio:
+    "Built for the daily commute — music, calls and video lectures on the go.",
+  'power-charging':
+    'Keeps your phone, tablet and cables charged through lectures and hostel power cuts.',
+  'study-setup': 'A practical pick for dorm life — long hours at your desk without the clutter.',
+  'hostel-essentials': 'Makes hostel and PG life easier, from day one to finals week.',
+  backpacks: 'Room for a laptop, books and the climb between floors.',
+  accessories: 'A small upgrade that keeps your setup working smoothly through the semester.',
+  monitors: 'A bigger canvas for assignments, code and late-night series.',
+  tablets: 'For notes, lectures and reading — light enough for every bag.',
+  laptops: 'Ready for notes, projects, coding and the odd game night.',
+  stationery: 'Stocked up and ready for the semester — notes, lists and exams.',
+};
+
+function ratingLine(rating, ratingCount) {
+  const parts = [];
+  if (rating > 0) parts.push(`rated ${rating}/5`);
+  if (ratingCount > 0) parts.push(`${ratingCount.toLocaleString('en-IN')} Amazon reviews`);
+  return parts.length > 0 ? ` Backed by ${parts.join(' and ')}.` : '';
+}
+
+function modelShort(name, brand) {
+  let model = name;
+  if (brand && name.toLowerCase().startsWith(brand.toLowerCase())) {
+    model = name.slice(brand.length);
+  }
+  model = model.replace(/^(?:,|:|\s|-)+/, '').trim();
+  return model.slice(0, 48) || '';
+}
+
+function polishBullet(raw) {
+  let bullet = raw
+    .replace(/^[\s*•▪·:;—–\-›]+/, '')
+    .replace(/^[^\p{L}\p{N}]+/u, '')
+    .replace(/^\[[^\]]*\]\s*/, '')
+    .replace(/^[A-Z][A-Z &/.%'\-(),]{2,48}\s*[:—-]\s*/, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  bullet = bullet.charAt(0).toUpperCase() + bullet.slice(1);
+  return strip(bullet).trim();
+}
+
+function buildShortRecommendation(pros, category, brand, name) {
   const clean = pros.find(
     (pro) =>
       pro.length < 96 && !pro.includes(':') && /^[A-Za-z0-9]/.test(pro),
   );
   if (clean) return clean;
-  return `A ${friendlyCategory(category)} worth a look on Amazon India`;
+  const model = modelShort(name, brand);
+  const base = `Top-rated ${friendlyCategory(category)} on Amazon India`;
+  return model ? `${base} — ${model}` : base;
 }
 
 function cleanBullets(about) {
@@ -132,19 +177,20 @@ function cleanBullets(about) {
 
 function buildPros(about) {
   return cleanBullets(about)
-    .map((item) => (item.length > 110 ? `${item.slice(0, 107)}...` : item))
+    .map(polishBullet)
+    .filter((item) => item.length > 12)
     .slice(0, 4);
 }
 
-function buildDescription(record) {
-  const bullets = cleanBullets(record.about)
-    .filter((bullet) => !bullet.includes(':') && /^[A-Za-z0-9]/.test(bullet))
-    .slice(0, 3);
-  let body = bullets.join('. ');
-  body = body.replace(/[.|;:,\s]+$/, '');
-  return body
-    ? `${record.name}. ${body}.`
-    : `${record.name} — auto-listed from Amazon India with a live price, customer rating and key specs. Tap the deal to check today's exact price and warranty before buying.`;
+function buildDescription(record, pros, shortRec) {
+  const bullets = pros.slice(0, 3).join('. ');
+  const template =
+    CATEGORY_COPY[record.category] ??
+    'Popular on Amazon India with a live price that updates automatically.';
+  const rating = ratingLine(record.rating, record.ratingCount);
+  let body = `${record.name}. ${shortRec}. ${template}${rating}`;
+  if (bullets) body = `${body} ${bullets}.`;
+  return body.replace(/[.|;:,\s]+$/, '');
 }
 
 function computeScore(record, discountPct) {
@@ -170,25 +216,37 @@ function buildProduct(record, queryConfig, slug) {
     notIdealFor: ['Very specific niche needs'],
   };
   const pros = buildPros(record.about);
+  if (pros.length === 0) {
+    for (const s of record.specs.slice(0, 2)) {
+      pros.push(`${s.label}: ${s.value}`);
+    }
+  }
   const cons =
     record.rating > 0 && record.rating < 4
       ? [`Customer reviews sit at ${record.rating} out of 5`]
       : [];
   const name = record.name.slice(0, 160);
+  const brand = record.brand ? record.brand.slice(0, 24) : capitalizeBrand(name);
+  const shortRecommendation = buildShortRecommendation(
+    pros,
+    queryConfig.category,
+    brand,
+    name,
+  );
 
   return {
     id: slug,
     slug,
     name,
-    brand: record.brand ? record.brand.slice(0, 24) : capitalizeBrand(name),
+    brand,
     category: queryConfig.category,
     priceInr: price,
     previousPriceInr: mrp > 0 ? mrp : price,
     rating: record.rating,
     ratingCount: record.ratingCount,
     uniSmartScore: computeScore(record, discountPct),
-    shortRecommendation: buildShortRecommendation(pros, queryConfig.category),
-    description: buildDescription(record),
+    shortRecommendation,
+    description: buildDescription(record, pros, shortRecommendation),
     specs: record.specs.slice(0, 12),
     pros,
     cons,
