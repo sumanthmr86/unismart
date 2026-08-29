@@ -93,6 +93,31 @@ function capitalizeBrand(brand) {
     .slice(0, 24);
 }
 
+function friendlyCategory(category) {
+  const labels = {
+    audio: 'audio gear',
+    'power-charging': 'charger',
+    'study-setup': 'desk essential',
+    'hostel-essentials': 'hostel essential',
+    backpacks: 'backpack',
+    accessories: 'accessory',
+    monitors: 'monitor',
+    tablets: 'tablet',
+    laptops: 'laptop',
+    stationery: 'stationery item',
+  };
+  return labels[category] ?? category.replace(/-/g, ' ');
+}
+
+function buildShortRecommendation(pros, category) {
+  const clean = pros.find(
+    (pro) =>
+      pro.length < 96 && !pro.includes(':') && /^[A-Za-z0-9]/.test(pro),
+  );
+  if (clean) return clean;
+  return `A ${friendlyCategory(category)} worth a look on Amazon India`;
+}
+
 function cleanBullets(about) {
   const out = [];
   for (const bullet of about) {
@@ -112,7 +137,9 @@ function buildPros(about) {
 }
 
 function buildDescription(record) {
-  const bullets = cleanBullets(record.about).slice(0, 3);
+  const bullets = cleanBullets(record.about)
+    .filter((bullet) => !bullet.includes(':') && /^[A-Za-z0-9]/.test(bullet))
+    .slice(0, 3);
   let body = bullets.join('. ');
   body = body.replace(/[.|;:,\s]+$/, '');
   return body
@@ -160,9 +187,7 @@ function buildProduct(record, queryConfig, slug) {
     rating: record.rating,
     ratingCount: record.ratingCount,
     uniSmartScore: computeScore(record, discountPct),
-    shortRecommendation:
-      pros[0]?.slice(0, 96) ??
-      `A ${queryConfig.category.replace('-', ' ')} find worth a look on Amazon India`,
+    shortRecommendation: buildShortRecommendation(pros, queryConfig.category),
     description: buildDescription(record),
     specs: record.specs.slice(0, 12),
     pros,
