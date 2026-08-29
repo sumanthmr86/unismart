@@ -137,6 +137,7 @@ export function ProductBrowser({
               active={category === 'all'}
               onClick={() => {
                 setCategory('all');
+                setPriceBucket(null);
                 scheduleLoading();
               }}
               label="All categories"
@@ -147,6 +148,7 @@ export function ProductBrowser({
                 active={category === c.id}
                 onClick={() => {
                   setCategory(c.id);
+                  setPriceBucket(null);
                   scheduleLoading();
                 }}
                 label={c.name}
