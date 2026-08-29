@@ -1,4 +1,4 @@
-import { BellRing, Scale, Search, ShieldCheck, Sparkles, Swords, TrendingDown, Trophy } from 'lucide-react';
+import { BellRing, Flame, Scale, Search, ShieldCheck, Sparkles, Swords, TrendingDown, Trophy } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { BuyingGuide } from '@/lib/types';
@@ -10,12 +10,16 @@ import { GuideCard } from '@/components/GuideCard';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Newsletter } from '@/components/Newsletter';
 import { CATEGORIES } from '@/data/categories';
+import { getCategoryName } from '@/data/categories';
 import { COMPARISONS } from '@/data/comparisons';
 import { GUIDES } from '@/data/guides';
 import { ROUNDUPS } from '@/data/roundups';
 import { getProductBySlug } from '@/data/products';
 import { EXAMPLE_SEARCHES, SITE_DESCRIPTION, SITE_NAME } from '@/lib/site';
 import { getFeaturedDeals, getFeaturedProducts } from '@/lib/products';
+import { getDealsPage } from '@/lib/products';
+import { discountPercent, formatINR, savingsInr } from '@/lib/format';
+import { productPlaceholder } from '@/lib/placeholder';
 import { isCuratedProduct } from '@/data/products';
 
 export const metadata: Metadata = {
@@ -59,6 +63,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <DealOfTheDaySection />
       <CategoriesSection />
       <FeaturedProductsSection products={featured} />
       <DealsCarousel
@@ -147,6 +152,82 @@ function HeroSection() {
           </ul>
         </div>
       </div>
+    </section>
+  );
+}
+
+function DealOfTheDaySection() {
+  const deal = getDealsPage().find((d) => {
+    const pct = discountPercent(d.priceInr, d.previousPriceInr);
+    return pct >= 18 && pct <= 65;
+  });
+  if (!deal) return null;
+  const discount = discountPercent(deal.priceInr, deal.previousPriceInr);
+  const savings = savingsInr(deal.priceInr, deal.previousPriceInr);
+  return (
+    <section className="container-page -mt-4 sm:-mt-6" aria-labelledby="deal-of-day-heading">
+      <Link
+        href={`/products/${deal.slug}`}
+        className="card group relative block overflow-hidden border-0 bg-slate-950 text-white shadow-elevate"
+      >
+        <div
+          className="pointer-events-none absolute inset-0"
+          aria-hidden="true"
+          style={{
+            background:
+              'radial-gradient(42rem 18rem at 8% 0%, rgb(217 70 239 / 0.25), transparent 55%), radial-gradient(36rem 20rem at 95% 100%, rgb(79 70 229 / 0.35), transparent 55%)',
+          }}
+        />
+        <div className="relative grid gap-6 p-6 sm:grid-cols-[9rem_1fr] sm:items-center sm:gap-8 sm:p-8">
+          <div className="overflow-hidden rounded-2xl bg-white/10">
+            <img
+              src={deal.image ?? productPlaceholder(deal.name, deal.category)}
+              alt=""
+              width={288}
+              height={216}
+              loading="lazy"
+              className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="max-w-xl">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-500/20 px-3 py-1 text-xs font-bold uppercase tracking-wide text-rose-300">
+                <Flame className="h-3.5 w-3.5" aria-hidden="true" />
+                Deal of the day
+              </span>
+              <h2
+                id="deal-of-day-heading"
+                className="mt-3 font-display text-xl font-bold leading-snug tracking-tight sm:text-2xl"
+              >
+                {deal.name}
+              </h2>
+              <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-300">
+                {getCategoryName(deal.category)} · {deal.shortRecommendation}
+              </p>
+            </div>
+            <div className="shrink-0 text-left sm:text-right">
+              <p className="text-2xl font-extrabold text-emerald-300">
+                {formatINR(deal.priceInr)}
+              </p>
+              <p className="mt-1 text-sm text-slate-400">
+                <span className="line-through">
+                  {formatINR(deal.previousPriceInr)}
+                </span>{' '}
+                <span className="font-semibold text-rose-300">
+                  {discount}% off
+                </span>
+              </p>
+              <p className="mt-1 text-xs font-medium text-slate-300">
+                You save {formatINR(savings)}
+              </p>
+              <span className="mt-3 inline-flex items-center gap-1 rounded-lg bg-white px-3 py-2 text-sm font-bold text-slate-900 transition-colors group-hover:bg-indigo-600 group-hover:text-white">
+                View deal
+                <TrendingDown className="h-4 w-4" aria-hidden="true" />
+              </span>
+            </div>
+          </div>
+        </div>
+      </Link>
     </section>
   );
 }

@@ -3,6 +3,7 @@ import { COMPARISONS } from '@/data/comparisons';
 import { PRODUCTS } from '@/data/products';
 import { GUIDES } from '@/data/guides';
 import { ROUNDUPS } from '@/data/roundups';
+import { CATEGORIES } from '@/data/categories';
 import { SITE_URL } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -46,8 +47,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const categoryRoutes: MetadataRoute.Sitemap = CATEGORIES.map((category) => ({
+    url: `${SITE_URL}/category/${category.id}`,
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }));
+
   return [
     ...staticRoutes,
+    ...categoryRoutes,
     ...productRoutes,
     ...roundupRoutes,
     ...comparisonRoutes,

@@ -80,7 +80,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
           <ul className="mt-4 flex flex-wrap gap-2">
             {CATEGORIES.map((c) => (
               <li key={c.id}>
-                <Link href={`/products?category=${c.id}`} className="chip">
+                <Link href={`/category/${c.id}`} className="chip">
                   {c.name}
                 </Link>
               </li>

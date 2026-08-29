@@ -38,7 +38,7 @@ export function CategoryCard({
   return (
     <li>
       <Link
-        href={`/products?category=${category.id}`}
+        href={`/category/${category.id}`}
         className="card group relative flex h-full flex-col gap-3 p-5 transition-all hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-elevate"
       >
         <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-colors group-hover:bg-indigo-600 group-hover:text-white">
