@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, Scale, X } from 'lucide-react';
@@ -73,8 +74,10 @@ export function Navbar() {
         </div>
       </div>
 
-      {mobileOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true">
+      {typeof document !== 'undefined' &&
+        mobileOpen &&
+        createPortal(
+          <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true">
           <button
             type="button"
             className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"
@@ -157,8 +160,9 @@ export function Navbar() {
               </Link>
             </nav>
           </div>
-        </div>
-      )}
+          </div>,
+          document.body,
+        )}
     </header>
   );
 }
