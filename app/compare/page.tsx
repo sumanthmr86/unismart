@@ -58,7 +58,7 @@ export default function ComparePage() {
       .filter((label) => specOrder.has(label))
       .sort((a, b) => specOrder.get(a)! - specOrder.get(b)!),
     ...specLabels.filter((label) => !specOrder.has(label)),
-  ].slice(0, 6);
+  ].slice(0, 8);
 
   const rowMeta = [
     { label: 'Price', render: (id: string) => renderPrice(id) },

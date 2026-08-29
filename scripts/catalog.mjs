@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { pullOne, strip } from './pull-products.mjs';
+import { derivedAudioSpecs } from './lib/title-specs.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const TARGET_TAG = 'unismart00-21';
@@ -227,6 +228,10 @@ function buildProduct(record, queryConfig, slug) {
       : [];
   const name = record.name.slice(0, 160);
   const brand = record.brand ? record.brand.slice(0, 24) : capitalizeBrand(name);
+  const specs =
+    queryConfig.category === 'audio'
+      ? [...derivedAudioSpecs(record.specs, name), ...record.specs].slice(0, 12)
+      : record.specs.slice(0, 12);
   const shortRecommendation = buildShortRecommendation(
     pros,
     queryConfig.category,
@@ -247,7 +252,7 @@ function buildProduct(record, queryConfig, slug) {
     uniSmartScore: computeScore(record, discountPct),
     shortRecommendation,
     description: buildDescription(record, pros, shortRecommendation),
-    specs: record.specs.slice(0, 12),
+    specs,
     pros,
     cons,
     bestFor: template.bestFor,

@@ -1,4 +1,5 @@
 import { readFileSync, writeFileSync } from 'node:fs';
+import { derivedAudioSpecs } from './lib/title-specs.mjs';
 
 const path = 'data/auto-products.json';
 const data = JSON.parse(readFileSync(path, 'utf8'));
@@ -66,6 +67,10 @@ const polishBullet = (raw) => {
 
 let rewritten = 0;
 for (const product of data) {
+  if (product.category === 'audio') {
+    const extras = derivedAudioSpecs(product.specs ?? [], product.name);
+    product.specs = [...extras, ...(product.specs ?? [])].slice(0, 12);
+  }
   const rawPros = [
     ...new Set(
       (product.pros ?? (product.about ?? [])).map((pro) => polishBullet(pro)),
