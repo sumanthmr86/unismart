@@ -1,5 +1,6 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { derivedAudioSpecs } from './lib/title-specs.mjs';
+import { cleanProductName } from './lib/clean-name.mjs';
 
 const path = 'data/auto-products.json';
 const data = JSON.parse(readFileSync(path, 'utf8'));
@@ -66,9 +67,39 @@ const polishBullet = (raw) => {
 };
 
 let rewritten = 0;
+const groups = new Map();
 for (const product of data) {
+  const base = cleanProductName(product.name);
+  const key = base.toLowerCase();
+  groups.set(key, (groups.get(key) ?? 0) + 1);
+  product.cleanBase = base;
+}
+for (const product of data) {
+  const key = product.cleanBase.toLowerCase();
+  if ((groups.get(key) ?? 0) > 1) {
+    const colour = (product.specs ?? []).find((s) => /^colou?r$/i.test(s.label))
+      ?.value;
+    product.cleanName = colour
+      ? `${product.cleanBase} (${colour})`
+      : product.cleanBase;
+  } else {
+    product.cleanName = product.cleanBase;
+  }
+}
+const used = new Map();
+for (const product of data) {
+  const key = product.cleanName.toLowerCase();
+  const n = used.get(key) ?? 0;
+  used.set(key, n + 1);
+  if (n > 0) product.cleanName = `${product.cleanName} (Variant ${n + 1})`;
+}
+for (const product of data) {
+  const originalName = product.name;
+  product.name = product.cleanName;
+  delete product.cleanBase;
+  delete product.cleanName;
   if (product.category === 'audio') {
-    const extras = derivedAudioSpecs(product.specs ?? [], product.name);
+    const extras = derivedAudioSpecs(product.specs ?? [], originalName);
     product.specs = [...extras, ...(product.specs ?? [])].slice(0, 12);
   }
   const rawPros = [

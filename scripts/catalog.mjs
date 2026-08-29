@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { pullOne, strip } from './pull-products.mjs';
 import { derivedAudioSpecs } from './lib/title-specs.mjs';
+import { cleanProductName } from './lib/clean-name.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const TARGET_TAG = 'unismart00-21';
@@ -183,13 +184,14 @@ function buildPros(about) {
     .slice(0, 4);
 }
 
-function buildDescription(record, pros, shortRec) {
+function buildDescription(record, pros, shortRec, productName) {
+  const title = productName ?? record.name;
   const bullets = pros.slice(0, 3).join('. ');
   const template =
     CATEGORY_COPY[record.category] ??
     'Popular on Amazon India with a live price that updates automatically.';
   const rating = ratingLine(record.rating, record.ratingCount);
-  let body = `${record.name}. ${shortRec}. ${template}${rating}`;
+  let body = `${title}. ${shortRec}. ${template}${rating}`;
   if (bullets) body = `${body} ${bullets}.`;
   return body.replace(/[.|;:,\s]+$/, '');
 }
@@ -226,7 +228,7 @@ function buildProduct(record, queryConfig, slug) {
     record.rating > 0 && record.rating < 4
       ? [`Customer reviews sit at ${record.rating} out of 5`]
       : [];
-  const name = record.name.slice(0, 160);
+  const name = cleanProductName(record.name).slice(0, 160);
   const brand = record.brand ? record.brand.slice(0, 24) : capitalizeBrand(name);
   const specs =
     queryConfig.category === 'audio'
@@ -251,7 +253,7 @@ function buildProduct(record, queryConfig, slug) {
     ratingCount: record.ratingCount,
     uniSmartScore: computeScore(record, discountPct),
     shortRecommendation,
-    description: buildDescription(record, pros, shortRecommendation),
+    description: buildDescription(record, pros, shortRecommendation, name),
     specs,
     pros,
     cons,
