@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
@@ -67,6 +68,7 @@ export default function RootLayout({
             <CompareBar />
           </CompareProvider>
         </ErrorBoundary>
+        <Analytics />
       </body>
     </html>
   );
