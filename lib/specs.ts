@@ -4,12 +4,12 @@ const SPEC_ALIASES: Record<string, string> = {
   display: 'Display',
   'display size': 'Display',
   'display type': 'Display',
-  'display resolution maximum': 'Display',
-  resolution: 'Display',
-  'aspect ratio': 'Display',
-  'screen surface description': 'Display',
   'screen type': 'Display',
   brightness: 'Display',
+  resolution: 'Resolution',
+  'aspect ratio': 'Aspect ratio',
+  'screen surface description': 'Screen surface',
+  'display resolution maximum': 'Resolution',
   processor: 'Processor',
   cpu: 'Processor',
   'cpu model': 'Processor',
@@ -78,17 +78,14 @@ const SPEC_ALIASES: Record<string, string> = {
   'output wattage': 'Power',
   'input voltage': 'Voltage',
   voltage: 'Voltage',
-  'output voltage': 'Voltage',
+  'input current': 'Voltage',
   'product dimensions': 'Dimensions',
   dimensions: 'Dimensions',
   'item dimensions l x w x h': 'Dimensions',
   colour: 'Colour',
   color: 'Colour',
-  'shade colour': 'Colour',
-  'shade color': 'Colour',
   material: 'Material',
   'base material': 'Material',
-  'shade material': 'Material',
   capacity: 'Capacity',
 };
 
@@ -130,6 +127,7 @@ const DROP_SPEC_LABELS = new Set([
 
 export const CANONICAL_SPEC_ORDER = [
   'Display',
+  'Resolution',
   'Processor',
   'Graphics',
   'RAM',
@@ -149,6 +147,8 @@ export const CANONICAL_SPEC_ORDER = [
   'Ports',
   'Connector',
   'Voltage',
+  'Output voltage',
+  'Output current',
   'Warranty',
 ];
 

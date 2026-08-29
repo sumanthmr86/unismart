@@ -212,12 +212,12 @@ export default function ComparePage() {
                     {label}
                   </th>
                   {products.map((product) => {
-                    const spec = product.specs.find(
-                      (s) => normalizeSpecLabel(s.label) === label,
-                    );
+                    const matches = product.specs
+                      .filter((s) => normalizeSpecLabel(s.label) === label)
+                      .sort((a, b) => b.value.length - a.value.length);
                     return (
                       <td key={product.id} className="px-4 py-3.5 text-slate-700">
-                        {spec?.value ?? '—'}
+                        {matches[0]?.value ?? '—'}
                       </td>
                     );
                   })}

@@ -50,7 +50,11 @@ function mergedSpecRows(first: Product, second: Product) {
   const seen = new Set<string>();
   const secondByLabel = new Map<string, string>();
   for (const spec of second.specs) {
-    secondByLabel.set(normalizeSpecLabel(spec.label), spec.value);
+    const normalized = normalizeSpecLabel(spec.label);
+    const existing = secondByLabel.get(normalized);
+    if (!existing || spec.value.length > existing.length) {
+      secondByLabel.set(normalized, spec.value);
+    }
   }
 
   for (const spec of first.specs) {
