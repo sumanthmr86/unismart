@@ -166,7 +166,7 @@ export default async function BestPicksDetailPage({ params }: BestPicksPageProps
           >
             Ranked picks
           </h2>
-          <ol className="grid grid-cols-2 gap-4 pt-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
+          <ol className="grid grid-cols-1 gap-4 min-[400px]:grid-cols-2 pt-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
             {picks.map((product, index) => {
               const isTop = index < 3;
               return (

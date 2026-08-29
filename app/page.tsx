@@ -170,7 +170,7 @@ function CategoriesSection() {
           subtitle="Ten categories, curated around real student life — from hostel essentials to study setups."
           href="/products"
         />
-        <ul className="grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3 xl:grid-cols-5">
+        <ul className="grid grid-cols-1 gap-4 min-[400px]:grid-cols-2 sm:gap-5 md:grid-cols-3 xl:grid-cols-5">
           {CATEGORIES.map((category) => (
             <CategoryCard key={category.id} category={category} />
           ))}

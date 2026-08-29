@@ -17,7 +17,7 @@ export function CompareBar() {
 
   return (
     <div
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 shadow-[0_-4px_20px_-8px_rgb(15_23_42/0.15)] backdrop-blur"
+      className="fixed inset-x-0 bottom-16 z-40 border-t border-slate-200 bg-white/95 shadow-[0_-4px_20px_-8px_rgb(15_23_42/0.15)] backdrop-blur md:bottom-0"
       role="region"
       aria-label="Compare tray"
     >

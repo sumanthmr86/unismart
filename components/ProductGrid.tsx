@@ -18,7 +18,7 @@ export function ProductGrid({
     return (
       <div
         className={cn(
-          'grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4',
+          'grid grid-cols-1 gap-4 min-[400px]:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4',
           className,
         )}
         role="status"
@@ -34,10 +34,10 @@ export function ProductGrid({
 
   return (
     <ul
-      className={cn(
-        'grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4',
-        className,
-      )}
+className={cn(
+          'grid grid-cols-1 gap-4 min-[400px]:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4',
+          className,
+        )}
     >
       {products.map((product) => (
         <li key={product.id} className="h-full">

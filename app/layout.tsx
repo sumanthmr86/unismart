@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { MobileNav } from '@/components/layout/MobileNav';
 import { CompareBar } from '@/components/layout/CompareBar';
 import { CompareProvider } from '@/components/compare/CompareProvider';
 import { ErrorBoundary } from '@/components/ui/ErrorBoundary';
@@ -60,14 +61,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`}>
       <body className="flex min-h-screen flex-col font-sans">
-        <ErrorBoundary>
-          <CompareProvider>
-            <Navbar />
-            <main className="flex-1">{children}</main>
-            <Footer />
-            <CompareBar />
-          </CompareProvider>
-        </ErrorBoundary>
+        <div className="flex min-h-screen flex-col pb-16 md:pb-0">
+          <ErrorBoundary>
+            <CompareProvider>
+              <Navbar />
+              <main className="flex-1">{children}</main>
+              <Footer />
+              <CompareBar />
+              <MobileNav />
+            </CompareProvider>
+          </ErrorBoundary>
+        </div>
         <Analytics />
       </body>
     </html>

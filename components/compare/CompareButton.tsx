@@ -27,14 +27,14 @@ export function CompareButton({
         title={active ? 'Remove from compare' : 'Add to compare'}
         aria-label={active ? `Remove ${productId} from compare` : `Add ${productId} to compare`}
         className={cn(
-          'inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition',
+          'inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border transition',
           active
             ? 'border-indigo-600 bg-indigo-600 text-white'
             : 'border-slate-300 bg-white text-slate-500 hover:border-indigo-300 hover:text-indigo-600',
           className,
         )}
       >
-        <Scale className="h-4 w-4" aria-hidden="true" />
+        <Scale className="h-5 w-5" aria-hidden="true" />
       </button>
     );
   }

@@ -94,7 +94,7 @@ export function ProductCard({
         </div>
 
         <div className="mt-auto grid grid-cols-[1fr_auto] items-center gap-2 pt-3 sm:pt-4">
-          <DealButton href={dealUrl} label="View Deal" size="sm" className="w-full min-w-0" />
+          <DealButton href={dealUrl} label="View Deal" size="sm" className="h-10 w-full min-w-0" />
           <CompareButton productId={product.id} />
         </div>
         <Link
