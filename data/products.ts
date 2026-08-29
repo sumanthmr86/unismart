@@ -26,6 +26,7 @@ function withLivePrices(products: Product[]): Product[] {
         typeof live.previousPriceInr === 'number' && live.previousPriceInr > 0
           ? live.previousPriceInr
           : product.previousPriceInr,
+      priceUpdatedOn: live.updatedAt ?? product.priceUpdatedOn,
     };
   });
 }

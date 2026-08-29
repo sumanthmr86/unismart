@@ -5,6 +5,7 @@ import {
   BadgeCheck,
   CheckCircle2,
   MinusCircle,
+  RefreshCw,
   ShoppingBag,
   ThumbsDown,
   ThumbsUp,
@@ -32,6 +33,16 @@ import type { Product } from '@/lib/types';
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>;
+}
+
+function formatSyncDate(date: string): string {
+  const parsed = new Date(date);
+  if (Number.isNaN(parsed.getTime())) return date;
+  return parsed.toLocaleDateString('en-IN', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  });
 }
 
 export function generateStaticParams() {
@@ -156,6 +167,13 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                 size="lg"
                 showSavings
               />
+              {product.priceUpdatedOn && (
+                <p className="mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700">
+                  <RefreshCw className="h-3.5 w-3.5" aria-hidden="true" />
+                  Live price synced from Amazon ·{' '}
+                  {formatSyncDate(product.priceUpdatedOn)}
+                </p>
+              )}
 
               <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                 <DealButton
