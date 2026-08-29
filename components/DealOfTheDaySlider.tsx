@@ -63,17 +63,17 @@ export function DealOfTheDaySlider({ deals }: { deals: Product[] }) {
               type="button"
               onClick={() => go(-1)}
               aria-label="Previous deal"
-              className="absolute left-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-slate-900/60 text-white backdrop-blur transition-colors hover:bg-white hover:text-slate-900"
+              className="absolute left-2 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-slate-900/60 text-white backdrop-blur transition-colors hover:bg-white hover:text-slate-900 sm:left-3 sm:h-9 sm:w-9"
             >
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
             </button>
             <button
               type="button"
               onClick={() => go(1)}
               aria-label="Next deal"
-              className="absolute right-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-slate-900/60 text-white backdrop-blur transition-colors hover:bg-white hover:text-slate-900"
+              className="absolute right-2 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-slate-900/60 text-white backdrop-blur transition-colors hover:bg-white hover:text-slate-900 sm:right-3 sm:h-9 sm:w-9"
             >
-              <ChevronRight className="h-5 w-5" />
+              <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
             </button>
             <div className="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 items-center gap-1.5">
               {deals.map((deal, i) => (
@@ -106,8 +106,8 @@ function DealSlide({ deal }: { deal: Product }) {
       className="group relative w-full shrink-0 basis-full overflow-hidden px-1 py-1.5 sm:px-2 sm:py-2"
       aria-label={`View deal: ${deal.name}`}
     >
-      <div className="grid gap-6 p-6 sm:grid-cols-[9rem_1fr] sm:items-center sm:gap-8 sm:p-8">
-        <div className="mx-auto w-40 overflow-hidden rounded-2xl bg-white/10 sm:mx-0 sm:w-full">
+      <div className="grid gap-5 p-5 sm:grid-cols-[9rem_1fr] sm:items-center sm:gap-8 sm:p-8">
+        <div className="mx-auto w-36 overflow-hidden rounded-2xl bg-white/10 sm:mx-0 sm:w-full">
           <img
             src={deal.image ?? productPlaceholder(deal.name, deal.category)}
             alt=""
@@ -123,7 +123,7 @@ function DealSlide({ deal }: { deal: Product }) {
               <Flame className="h-3.5 w-3.5" aria-hidden="true" />
               Deal of the day
             </span>
-            <h2 className="mt-3 font-display text-xl font-bold leading-snug tracking-tight sm:text-2xl">
+            <h2 className="mt-3 font-display text-lg font-bold leading-snug tracking-tight sm:text-2xl">
               {deal.name}
             </h2>
             <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-300">
@@ -131,7 +131,7 @@ function DealSlide({ deal }: { deal: Product }) {
             </p>
           </div>
           <div className="shrink-0 text-left sm:text-right">
-            <p className="text-2xl font-extrabold text-emerald-300">
+            <p className="text-xl font-extrabold text-emerald-300 sm:text-2xl">
               {formatINR(deal.priceInr)}
             </p>
             <p className="mt-1 text-sm text-slate-400">
@@ -145,7 +145,7 @@ function DealSlide({ deal }: { deal: Product }) {
             <p className="mt-1 text-xs font-medium text-slate-300">
               You save {formatINR(savings)}
             </p>
-            <span className="mt-3 inline-flex items-center gap-1 rounded-lg bg-white px-4 py-2 text-sm font-bold text-slate-900 transition-colors group-hover:bg-emerald-500 group-hover:text-white">
+            <span className="mt-3 inline-flex w-full items-center justify-center gap-1 rounded-lg bg-white px-4 py-2.5 text-sm font-bold text-slate-900 transition-colors group-hover:bg-emerald-500 group-hover:text-white sm:w-auto">
               View deal
               <TrendingDown className="h-4 w-4" aria-hidden="true" />
             </span>

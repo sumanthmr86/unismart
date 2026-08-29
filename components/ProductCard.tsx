@@ -57,28 +57,30 @@ export function ProductCard({
         />
       </div>
 
-      <div className="flex flex-1 flex-col p-4">
+      <div className="flex flex-1 flex-col p-3 sm:p-4">
         <div className="mb-1.5 flex items-center justify-between gap-2">
           <Link
             href={`/products?category=${product.category}`}
-            className="inline-flex items-center gap-1 text-xs font-medium text-indigo-600 hover:text-indigo-800"
+            className="inline-flex min-w-0 items-center gap-1 truncate text-xs font-medium text-indigo-600 hover:text-indigo-800"
           >
-            <Tag className="h-3 w-3" aria-hidden="true" />
-            {categoryName}
+            <Tag className="h-3 w-3 shrink-0" aria-hidden="true" />
+            <span className="truncate">{categoryName}</span>
           </Link>
-          <RatingStars rating={product.rating} showValue />
+          <span className="shrink-0">
+            <RatingStars rating={product.rating} showValue />
+          </span>
         </div>
 
-        <h3 className="font-display text-[15px] font-semibold leading-snug text-slate-900">
+        <h3 className="font-display text-sm font-semibold leading-snug text-slate-900 sm:text-[15px]">
           <Link
             href={`/products/${product.slug}`}
-            className="transition-colors hover:text-indigo-600"
+            className="line-clamp-2 transition-colors hover:text-indigo-600"
           >
             {product.name}
           </Link>
         </h3>
 
-        <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
+        <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-slate-600 sm:text-sm">
           {product.shortRecommendation}
         </p>
 
@@ -86,18 +88,18 @@ export function ProductCard({
           <PriceBlock
             price={product.priceInr}
             previousPrice={product.previousPriceInr}
-            size="md"
-            showSavings
+            size="sm"
+            showSavings={false}
           />
         </div>
 
-        <div className="mt-auto grid grid-cols-[1fr_auto] items-center gap-2 pt-4">
-          <DealButton href={dealUrl} label="View Deal" className="w-full" />
+        <div className="mt-auto grid grid-cols-[1fr_auto] items-center gap-2 pt-3 sm:pt-4">
+          <DealButton href={dealUrl} label="View Deal" size="sm" className="w-full min-w-0" />
           <CompareButton productId={product.id} />
         </div>
         <Link
           href={`/products/${product.slug}`}
-          className="mt-3 text-center text-xs font-medium text-slate-500 underline-offset-2 transition hover:text-indigo-600 hover:underline"
+          className="mt-2 hidden text-center text-xs font-medium text-slate-500 underline-offset-2 transition hover:text-indigo-600 hover:underline sm:block"
         >
           View details
         </Link>
