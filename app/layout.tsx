@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
-import { DemoBanner } from '@/components/layout/DemoBanner';
 import { CompareBar } from '@/components/layout/CompareBar';
 import { CompareProvider } from '@/components/compare/CompareProvider';
 import { ErrorBoundary } from '@/components/ui/ErrorBoundary';
@@ -62,7 +61,6 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col font-sans">
         <ErrorBoundary>
           <CompareProvider>
-            <DemoBanner />
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />

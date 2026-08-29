@@ -208,7 +208,7 @@ export default function ComparePage() {
 
         <p className="mt-4 flex items-center gap-2 text-xs text-slate-400">
           <Scale className="h-3.5 w-3.5" aria-hidden="true" />
-          Comparison is based on demo data. Prices and ratings are placeholders.
+          Comparison uses the specs and ratings shown on each product page — always confirm details on the merchant site before buying.
         </p>
 
         <div className="mt-8">

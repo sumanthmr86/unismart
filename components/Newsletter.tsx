@@ -26,7 +26,7 @@ export function Newsletter({
       >
         <CheckCircle2 className="h-6 w-6 shrink-0 text-emerald-600" aria-hidden="true" />
         <p className="text-sm font-medium text-emerald-800">
-          You’re in! Demo signup successful — your first weekly deal list is on the way.
+          You’re in! Your first weekly deal list is on the way.
         </p>
       </div>
     );

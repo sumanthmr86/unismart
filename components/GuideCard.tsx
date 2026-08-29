@@ -10,7 +10,7 @@ export function GuideCard({ guide }: { guide: BuyingGuide }) {
       <Link href={`/guides/${guide.slug}`} className="relative block overflow-hidden">
         <img
           src={guidePlaceholder(guide.title, guide.category)}
-          alt={`${guide.title} — demo cover`}
+          alt={`${guide.title} — guide cover`}
           width={640}
           height={360}
           loading="lazy"

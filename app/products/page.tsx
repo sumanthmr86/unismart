@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ProductBrowser } from '@/components/ProductBrowser';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
-import { DemoNote } from '@/components/ui/DemoNote';
 import { CATEGORIES } from '@/data/categories';
 import { PRODUCTS } from '@/data/products';
 import type { CategoryId } from '@/lib/types';
@@ -64,8 +63,6 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
               : 'Curated products for student life — compare prices, scores and deals before you buy.'}
           </p>
         </div>
-
-        <DemoNote className="mb-8 max-w-3xl" />
 
         <ProductBrowser
           products={PRODUCTS}

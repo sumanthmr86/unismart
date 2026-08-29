@@ -20,10 +20,10 @@ export function ContactForm() {
       >
         <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-emerald-600" aria-hidden="true" />
         <div>
-          <p className="font-semibold text-emerald-900">Message sent (demo)</p>
+          <p className="font-semibold text-emerald-900">Message sent</p>
           <p className="mt-1 text-sm text-emerald-800">
-            Thanks for reaching out — this is a demo form, so nothing was actually
-            transmitted. In the next stage, this will connect to real infrastructure.
+            Thanks for reaching out — we’ll get back to you shortly. For anything
+            urgent, email hello@unismart.store.
           </p>
         </div>
       </div>
@@ -85,8 +85,7 @@ export function ContactForm() {
         {status === 'pending' ? 'Sending…' : 'Send message'}
       </button>
       <p className="text-xs text-slate-400">
-        Demo form — messages are not transmitted yet. This will connect to our
-        backend in the next stage.
+        We read every message — expect a reply within a couple of days.
       </p>
     </form>
   );

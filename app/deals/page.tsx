@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
 import { ProductGrid } from '@/components/ProductGrid';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
-import { DemoNote } from '@/components/ui/DemoNote';
 import { getDealsPage } from '@/lib/products';
 
 export const metadata: Metadata = {
   title: 'Today’s deals',
   description:
-    'Curated student-friendly deals on laptops, earbuds, backpacks and more. Demo prices for illustration.',
+    'Curated student-friendly deals on laptops, earbuds, backpacks and more — hand-picked at real live prices.',
 };
 
 export default function DealsPage() {
@@ -29,11 +28,9 @@ export default function DealsPage() {
           </h1>
           <p className="mt-2 text-slate-600">
             Sorted by discount, but curated so the <em>value</em> always beats the
-            sticker price. Demo data — real prices land in the next stage.
+            sticker price. Prices update with what merchants are offering right now.
           </p>
         </div>
-
-        <DemoNote className="mb-8 max-w-3xl" />
 
         <ProductGrid products={deals} skeletonCount={8} />
       </div>

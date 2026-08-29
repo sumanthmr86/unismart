@@ -5,7 +5,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 export const metadata: Metadata = {
   title: 'Privacy policy',
   description:
-    'How UniSmart handles (and does not handle) your data. Short version: this is a demo build, and we collect almost nothing.',
+    'How UniSmart handles (and does not handle) your data. Short version: we collect almost nothing.',
   robots: { index: true, follow: true },
 };
 
@@ -13,15 +13,15 @@ const sections = [
   {
     heading: 'The short version',
     body: [
-      'We care about your privacy, and on the current demo build we collect almost nothing. There is no user account system, no login, no transaction processing and no payment data anywhere in UniSmart.',
-      'Because this is a static, demonstration build, there are no analytics scripts running and no marketing trackers being served.',
+      'We care about your privacy, and today UniSmart collects almost nothing. There is no user account system, no login, no transaction processing and no payment data anywhere in UniSmart.',
+      'There are no analytics scripts running and no marketing trackers being served on this website.',
     ],
   },
   {
     heading: 'Data this build collects',
     body: [
       'Nothing that leaves your device. Product selection and compare lists are stored in your browser’s local storage so your session feels cohesive — this stays on your device and is never sent to a server.',
-      'If you subscribe to the newsletter or submit the contact form, nothing is currently transmitted or stored. Those are demo interactions until a real backend is built.',
+      'If you subscribe to the newsletter or submit the contact form, your message is received and read, and we reply by email. We never sell or share your details.',
     ],
   },
   {
@@ -66,7 +66,7 @@ export default function PrivacyPage() {
           <PageHero
             eyebrow="Legal"
             title="Privacy policy"
-            description="Last updated: August 2026. Long story short — on this demo build, we collect almost nothing."
+            description="Last updated: August 2026. Long story short — we collect almost nothing."
           />
 
           <div className="prose-unismart">

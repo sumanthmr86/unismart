@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowRight, BookOpenText, CheckCircle2, Clock, Lightbulb } from 'lucide-react';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
-import { DemoNote } from '@/components/ui/DemoNote';
 import { Faq } from '@/components/ui/Faq';
 import { GuideCard } from '@/components/GuideCard';
 import { GuideProductRef } from '@/components/GuideProductRef';
@@ -104,8 +103,6 @@ export default async function GuideDetailPage({ params }: GuidePageProps) {
             {guide.intro}
           </p>
         </header>
-
-        <DemoNote className="mt-6 max-w-3xl" />
 
         <section className="mt-12" aria-labelledby="picks-heading">
           <h2

@@ -30,13 +30,13 @@ export const GUIDES: BuyingGuide[] = [
       {
         heading: 'Step-up pick: realme Buds Air 6 Pro',
         body: 'If your budget creeps past ₹1500 occasionally and you want dual drivers plus stronger ANC, the Buds Air 6 Pro is the sensible step-up. Great for students who live on calls.',
-        productIds: ['realme-buds-air-6-pro'],
+        productIds: ['realme-buds-air-8-pro'],
       },
     ],
     picks: [
       { label: 'Best Overall', productId: 'oneplus-nord-buds-3', reason: 'Balanced everything, real ANC, great value on sale.' },
       { label: 'Best Budget', productId: 'boat-airdopes-141', reason: 'Unbeatable price for casual listeners who want bass.' },
-      { label: 'Best Step-Up', productId: 'realme-buds-air-6-pro', reason: 'Dual drivers and stronger ANC when budget allows.' },
+      { label: 'Best Step-Up', productId: 'realme-buds-air-8-pro', reason: 'Dual drivers and stronger ANC when budget allows.' },
     ],
     tips: [
       'Buy earbuds during sale weeks — ₹1500 picks often drop below ₹1200.',
@@ -148,13 +148,13 @@ export const GUIDES: BuyingGuide[] = [
       'The average hostel day has more devices than sockets. This guide covers the exact tools that end the daily charging scramble: a dependable power bank and a fast GaN charger for everything.',
     sections: [
       {
-        heading: 'Why 10000mAh is the sweet spot',
-        body: 'It tops a typical phone twice, adds barely any weight to a backpack, and fits hostel rules better than giant bricks. Bigger banks charge laptops slowly and weigh a ton — only buy one if you truly need it.',
+        heading: 'Capacity: from phone top-ups to laptop rescue',
+        body: 'A 10000mAh bank tops a typical phone twice and slips into a backpack. If you also carry a laptop and earbuds, step up to a 20000mAh bank with fast charging — it handles phones, tablets, laptops and earbuds without drama.',
       },
       {
-        heading: 'Best power bank: Xiaomi Mi 3i 10000',
-        body: 'The Mi Power Bank 3i is the safest purchase in the category — proven cells, solid build, and 18W output for a phone-sized top-up on the go.',
-        productIds: ['mi-power-bank-3i-10000'],
+        heading: 'Best power bank: Xiaomi Power Bank 5i 20000mAh',
+        body: 'The Xiaomi Power Bank 5i is the safest purchase in the category — proven cells, solid build, and 67W turbo output that can top up a phone in minutes and even charge a laptop.',
+        productIds: ['xiaomi-power-bank-5i-20000'],
       },
       {
         heading: 'The charger upgrade: Ambrane 65W GaN',
@@ -163,7 +163,7 @@ export const GUIDES: BuyingGuide[] = [
       },
     ],
     picks: [
-      { label: 'Best Power Bank', productId: 'mi-power-bank-3i-10000', reason: 'Reliable, compact and the market default for a reason.' },
+      { label: 'Best Power Bank', productId: 'xiaomi-power-bank-5i-20000', reason: 'Reliable, fast and the market default for a reason.' },
       { label: 'Best Charger', productId: 'ambrane-65w-gan-charger', reason: 'One brick for laptop, phone and earbuds.' },
     ],
     tips: [
@@ -232,7 +232,7 @@ export const GUIDES: BuyingGuide[] = [
       {
         heading: 'The appliance that pays for itself',
         body: 'A small electric kettle pays for itself within a fortnight of replacing canteen chai and instant noods. Compact, fast and shock-proof — the single highest-value hostel purchase.',
-        productIds: ['prestige-electric-kettle-0-8l'],
+        productIds: ['prestige-electric-kettle-1-5l'],
       },
       {
         heading: 'Fix the socket problem',
@@ -241,14 +241,14 @@ export const GUIDES: BuyingGuide[] = [
       },
       {
         heading: 'Survive power cuts and long days',
-        body: 'Between morning lectures and evening library runs, a 10000mAh power bank covers the gap when the hostel board goes out.',
-        productIds: ['mi-power-bank-3i-10000'],
+        body: 'Between morning lectures and evening library runs, a power bank covers the gap when the hostel board goes out — the 20000mAh Xiaomi 5i even keeps a laptop alive.',
+        productIds: ['xiaomi-power-bank-5i-20000'],
       },
     ],
     picks: [
-      { label: 'Best First Buy', productId: 'prestige-electric-kettle-0-8l', reason: 'Chai, maggi and oats — instant relief in a hostel.' },
+      { label: 'Best First Buy', productId: 'prestige-electric-kettle-1-5l', reason: 'Chai, maggi and oats — instant relief in a hostel.' },
       { label: 'Best Gadget Insurance', productId: 'havells-extension-board-4-socket', reason: 'Surge protection ends voltage-dip heart attacks.' },
-      { label: 'Best Power Backup', productId: 'mi-power-bank-3i-10000', reason: 'Keeps your phone alive through hostel outages.' },
+      { label: 'Best Power Backup', productId: 'xiaomi-power-bank-5i-20000', reason: 'Keeps your phone (and laptop) alive through hostel outages.' },
     ],
     tips: [
       'Check the hostel appliance policy before buying kettles or hotplates.',
@@ -283,12 +283,12 @@ export const GUIDES: BuyingGuide[] = [
       {
         heading: 'Best media and notes: Samsung Galaxy Tab A9+',
         body: 'The A9+ adds a smoother 90Hz panel and tuned speakers, with room to grow storage. Students who live in Google Docs and YouTube lectures will feel the upgrade.',
-        productIds: ['samsung-galaxy-tab-a9'],
+        productIds: ['samsung-galaxy-tab-a11-plus'],
       },
     ],
     picks: [
       { label: 'Best Budget', productId: 'redmi-pad-se', reason: 'Huge screen, long battery, unbeatable price.' },
-      { label: 'Best Media Pick', productId: 'samsung-galaxy-tab-a9', reason: 'Better screen, speakers and storage headroom.' },
+      { label: 'Best Media Pick', productId: 'samsung-galaxy-tab-a11-plus', reason: 'Better screen, speakers and storage headroom.' },
     ],
     tips: [
       'Buy a matte screen protector for PDF-heavy reading.',

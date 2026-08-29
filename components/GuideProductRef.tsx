@@ -19,7 +19,7 @@ export function GuideProductRef({ productId }: { productId: string }) {
       >
         <img
           src={product.image ?? productPlaceholder(product.name, product.category)}
-          alt={`${product.name} — demo product image`}
+          alt={`${product.name} — product image`}
           width={640}
           height={300}
           loading="lazy"

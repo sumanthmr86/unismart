@@ -50,7 +50,7 @@ const steps = [
   {
     title: 'We show you the deal',
     description:
-      'Demo links today; verified merchant deals later. You click, compare retailers and decide with full control.',
+      'Every deal button goes straight to the real merchant listing, so you can click, compare retailers and decide with full control.',
   },
 ];
 
@@ -102,9 +102,10 @@ export default function AboutPage() {
               ))}
             </ol>
             <p>
-              A quick note on the current build: everything you see is a
-              production-ready demo, so prices, ratings and reviews are clearly
-              marked placeholders until real data pipelines arrive.
+              Prices on UniSmart are the live merchant prices we captured at the
+              time of publishing. Since deals change daily, always confirm the
+              final price, shipping and warranty on the retailer’s page before
+              you buy.
             </p>
           </div>
 

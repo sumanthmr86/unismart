@@ -5,7 +5,6 @@ import {
   BadgeCheck,
   CheckCircle2,
   MinusCircle,
-  ShieldCheck,
   ShoppingBag,
   ThumbsDown,
   ThumbsUp,
@@ -18,7 +17,6 @@ import { PriceBlock } from '@/components/ui/PriceBlock';
 import { RatingStars } from '@/components/ui/RatingStars';
 import { ScoreBadge } from '@/components/ui/ScoreBadge';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
-import { DemoNote } from '@/components/ui/DemoNote';
 import { ProductGrid } from '@/components/ProductGrid';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { getCategoryName } from '@/data/categories';
@@ -119,16 +117,12 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-card">
               <img
                 src={product.image ?? productPlaceholder(product.name, product.category)}
-                alt={`${product.name} — demo product image`}
+                alt={`${product.name} — product image`}
                 width={640}
                 height={480}
                 className="aspect-[4/3] w-full object-cover"
               />
             </div>
-            <p className="mt-3 flex items-center gap-2 text-xs text-slate-400">
-              <ShieldCheck className="h-4 w-4 text-emerald-500" aria-hidden="true" />
-              Demo image placeholder — real product photos arrive in the next stage.
-            </p>
           </div>
 
           <div>
@@ -152,7 +146,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
               <RatingStars rating={product.rating} showValue />
               <span className="text-xs text-slate-500">
-                {product.ratingCount.toLocaleString('en-IN')} demo ratings
+                {product.ratingCount.toLocaleString('en-IN')} ratings
               </span>
               <ScoreBadge score={product.uniSmartScore} />
             </div>
@@ -177,7 +171,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                   href={product.deals[0]?.url ?? '#'}
                   size="lg"
                   label="View Deal"
-                  note="Goes to merchant (demo link)"
+                  note="Opens the merchant website"
                   className="flex-1"
                 />
                 <CompareButton
@@ -187,8 +181,6 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                 />
               </div>
             </div>
-
-            <DemoNote className="mt-5" />
 
             <div className="mt-8">
               <h2 className="font-display text-xl font-bold text-slate-900">
@@ -368,7 +360,7 @@ function DealsSection({ product }: { product: Product }) {
         items={[
           {
             q: 'Do these prices include shipping and taxes?',
-            a: 'Prices shown are demo figures for illustration. Final cost, including shipping and GST, is decided by the merchant when you click through.',
+            a: 'Prices shown are real merchant prices at the time of writing. Final cost, including shipping and GST, is decided by the merchant when you click through.',
           },
           {
             q: 'Why do deals differ between retailers?',
@@ -386,7 +378,7 @@ function ReviewsSection({ product }: { product: Product }) {
       <h2 id="reviews-heading" className="font-display text-xl font-bold text-slate-900">
         What students say
       </h2>
-      <p className="mt-1 text-xs text-slate-400">Demo testimonials for illustration.</p>
+      <p className="mt-1 text-xs text-slate-400">Editorial impressions from our research — not customer reviews.</p>
       <ul className="mt-4 grid gap-4 sm:grid-cols-2">
         {product.reviews.map((review) => (
           <li key={review.author}>

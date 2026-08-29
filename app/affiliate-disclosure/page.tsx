@@ -57,9 +57,11 @@ export default function AffiliateDisclosurePage() {
               commission. This fee never increases the price you pay.
             </p>
             <p>
-              On this demonstration build, all deal links are demo URLs. Real
-              affiliate tracking arrives in a later stage — and this page will
-              be updated with the exact programs and merchants we work with.
+              Today we are a participant in the Amazon Associates Programme
+              (amazon.in) and may add more merchant programs over time. Every
+              “View Deal” button carries our referral tag so purchases help keep
+              UniSmart free — this page will always list the exact programs we
+              work with.
             </p>
           </section>
 
@@ -86,9 +88,10 @@ export default function AffiliateDisclosurePage() {
             </p>
             <h2>Where do our links go?</h2>
             <p>
-              Affiliate links route through a UniSmart short link (<code>/go/…</code>)
-              so we can track referrals without changing the merchant experience.
-              Merchant program publishers are listed below:
+              Our buttons link straight to the merchant website with our referral
+              tag attached — no short links, no extra steps, so the merchant
+              experience stays exactly as it normally is. Merchant program
+              publishers are listed below:
             </p>
             <ul>
               {RETAILERS.map((retailer) => (
@@ -98,8 +101,8 @@ export default function AffiliateDisclosurePage() {
               ))}
             </ul>
             <p>
-              Again, on this build the links are placeholders. When live, this
-              disclosure will always reflect the real list of partner programs.
+              This page will always reflect the real list of partner programs as
+              they are added.
             </p>
           </section>
         </div>
