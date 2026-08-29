@@ -50,10 +50,86 @@ export function withCategory(product: Product): ProductWithCategory {
   };
 }
 
+const FILLER_WORDS = new Set([
+  'best',
+  'top',
+  'the',
+  'a',
+  'an',
+  'for',
+  'of',
+  'in',
+  'on',
+  'to',
+  'and',
+  'with',
+  'college',
+  'students',
+  'student',
+  'class',
+  'buy',
+  'price',
+  'under',
+  'below',
+  'less',
+  'than',
+  'above',
+  'over',
+  'up',
+  'upto',
+  'max',
+  'within',
+  'products',
+  'product',
+  'rs',
+  'inr',
+  'k',
+]);
+
+export interface ParsedQuery {
+  tokens: string[];
+  minPrice?: number;
+  maxPrice?: number;
+}
+
+export function parseSearchQuery(input: string): ParsedQuery {
+  const q = (input ?? '').trim().toLowerCase().replace(/₹/g, 'rs ');
+  let minPrice: number | undefined;
+  let maxPrice: number | undefined;
+
+  const priceRe =
+    /(?:under|below|less than|up to|upto|within|max)\s*(?:rs\.?\s*)?(\d[\d,]*(?:\s*k)?)|\b(?:rs\.?\s*)(\d[\d,]*(?:\s*k)?)/i;
+  const priceMatch = q.match(priceRe);
+  if (priceMatch) {
+    const raw = (priceMatch[1] ?? priceMatch[2]).replace(/,/g, '');
+    const mult = /k\s*$/.test(raw) ? 1000 : 1;
+    const num = parseFloat(raw) * mult;
+    maxPrice = Number.isFinite(num) ? num : undefined;
+  }
+
+  const plainPriceRe = /(\d[\d,]*(?:\s*k)?)/;
+  const tokens = q
+    .split(/\s+/)
+    .filter(Boolean)
+    .reduce<string[]>((acc, word) => {
+      if (FILLER_WORDS.has(word)) return acc;
+      const m = word.match(plainPriceRe);
+      if (m && m[0].length >= 4) {
+        const mult = /k$/i.test(m[0]) ? 1000 : 1;
+        const num = parseFloat(m[0].replace(/,/g, '')) * mult;
+        if (Number.isFinite(num)) maxPrice = Math.min(maxPrice ?? num, num);
+        return acc;
+      }
+      acc.push(word);
+      return acc;
+    }, []);
+
+  return { tokens, minPrice, maxPrice };
+}
+
 export function searchProducts(query: string): Product[] {
-  const q = query.trim().toLowerCase();
-  if (!q) return [];
-  const tokens = q.split(/\s+/).filter(Boolean);
+  const { tokens } = parseSearchQuery(query);
+  if (tokens.length === 0) return [];
 
   const scored = PRODUCTS.map((product) => {
     const haystack = [
@@ -94,13 +170,14 @@ export function filterProducts(
     minPrice?: number;
   },
 ): Product[] {
-  const q = opts.query.trim().toLowerCase();
-  const tokens = q.split(/\s+/).filter(Boolean);
+  const { tokens, minPrice, maxPrice } = parseSearchQuery(opts.query);
 
-  return products.filter((p) => {
+  const match = (p: Product, priceCap?: number) => {
     if (opts.category !== 'all' && p.category !== opts.category) return false;
-    if (opts.minPrice !== undefined && p.priceInr < opts.minPrice) return false;
-    if (opts.maxPrice !== undefined && p.priceInr > opts.maxPrice) return false;
+    const low = opts.minPrice ?? minPrice;
+    const high = opts.maxPrice ?? priceCap;
+    if (low !== undefined && p.priceInr < low) return false;
+    if (high !== undefined && p.priceInr > high) return false;
     if (tokens.length === 0) return true;
     const haystack = [
       p.name,
@@ -112,7 +189,13 @@ export function filterProducts(
       .join(' ')
       .toLowerCase();
     return tokens.every((t) => haystack.includes(t));
-  });
+  };
+
+  const priced = products.filter((p) => match(p, maxPrice));
+  if (priced.length === 0 && maxPrice !== undefined) {
+    return products.filter((p) => match(p, undefined));
+  }
+  return priced;
 }
 
 export function sortProducts(products: Product[], sort: SortKey): Product[] {
