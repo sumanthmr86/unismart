@@ -170,11 +170,15 @@ function CategoriesSection() {
           subtitle="Ten categories, curated around real student life — from hostel essentials to study setups."
           href="/products"
         />
-        <ul className="grid grid-cols-1 gap-4 min-[400px]:grid-cols-2 sm:gap-5 md:grid-cols-3 xl:grid-cols-5">
-          {CATEGORIES.map((category) => (
-            <CategoryCard key={category.id} category={category} />
-          ))}
-        </ul>
+        <div className="overflow-x-auto no-scrollbar pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 sm:pb-0">
+          <ul className="flex flex-wrap gap-4 min-[600px]:grid grid-cols-1 min-[400px]:grid-cols-2 sm:gap-5 md:grid-cols-3 xl:grid-cols-5 sm:flex-nowrap sm:overflow-x-auto sm:pb-4 sm:-mx-4 sm:px-4">
+            {CATEGORIES.map((category) => (
+              <li key={category.id} className="shrink-0 w-full min-[400px]:w-auto sm:w-48">
+                <CategoryCard category={category} />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );
