@@ -23,6 +23,13 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
+      - name: Debug secrets
+        run: |
+          echo "AMAZON_PA_ACCESS_KEY: ${{ secrets.AMAZON_PA_ACCESS_KEY != '' && 'SET' || 'MISSING' }}"
+          echo "AMAZON_PA_SECRET_KEY: ${{ secrets.AMAZON_PA_SECRET_KEY != '' && 'SET' || 'MISSING' }}"
+          echo "AMAZON_PA_PARTNER_TAG: ${{ secrets.AMAZON_PA_PARTNER_TAG != '' && 'SET' || 'MISSING' }}"
+          echo "AMAZON_PA_HOST: ${{ secrets.AMAZON_PA_HOST != '' && 'SET' || 'MISSING' }}"
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
