@@ -5,6 +5,16 @@ import { PaapiClient } from 'amazon-paapi';
 import { derivedAudioSpecs } from './lib/title-specs.mjs';
 import { cleanProductName } from './lib/clean-name.mjs';
 
+// Validate required environment variables at startup
+const requiredEnv = ['AMAZON_PA_ACCESS_KEY', 'AMAZON_PA_SECRET_KEY', 'AMAZON_PA_PARTNER_TAG', 'AMAZON_PA_HOST'];
+for (const key of requiredEnv) {
+  if (!process.env[key]) {
+    console.error(`❌ Missing required environment variable: ${key}`);
+    process.exit(1);
+  }
+  console.log(`✅ ${key} is set`);
+}
+
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 const PA_ACCESS_KEY = process.env.AMAZON_PA_ACCESS_KEY;
@@ -183,11 +193,6 @@ async function searchCategory(query, category, limit = 10) {
 async function main() {
   console.log('🌱 Seeder starting — targeting 500 products...');
 
-  if (!process.env.AMAZON_PA_ACCESS_KEY || !process.env.AMAZON_PA_SECRET_KEY) {
-    console.error('❌ Missing PA-API credentials in env');
-    process.exit(1);
-  }
-
   const queries = JSON.parse(readFileSync(queriesPath, 'utf8'));
   let asins = existsSync(asinsPath) ? JSON.parse(readFileSync(asinsPath, 'utf8')) : {};
   let autoProducts = existsSync(autoProductsPath) ? JSON.parse(readFileSync(autoProductsPath, 'utf8')) : [];
@@ -228,7 +233,7 @@ async function main() {
       const shortRec = buildShortRecommendation(title, features, category);
       const description = buildDescription(title, features, rating, ratingCount, category);
       const specs = extractSpecs(features, category);
-      const audioSpecs = (await import('./lib/title-specs.mjs')).derivedAudioSpecs(name);
+      const audioSpecs = derivedAudioSpecs(name);
       const allSpecs = [...specs, ...audioSpecs];
 
       const pros = features.slice(0, 3).map((f) => f.charAt(0).toUpperCase() + f.slice(1));
@@ -293,7 +298,7 @@ async function main() {
   }
 
   writeFileSync(autoProductsPath, JSON.stringify(keep, null, 2));
-  writeFileSync(archivedPath, JSON.stringify([...JSON.parse(readFileSync(archivedPath, 'utf8') || '[]'), ...archive], null, 2));
+  writeFileSync(archivedPath, JSON.stringify([...archived, ...archive], null, 2));
   writeFileSync(asinsPath, JSON.stringify(asins, null, 2));
 
   console.log(`✅ Kept ${keep.length} products, archived ${archive.length} products`);
