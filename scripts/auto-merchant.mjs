@@ -20,7 +20,7 @@ const archivedPath = path.join(root, 'data', 'archived-products.json');
 const livePricesPath = path.join(root, 'data', 'live-prices.json');
 
 const MAX_PRODUCTS_PER_CATEGORY = 50;
-const TARGET_TOTAL = 200;
+const TARGET_TOTAL = 500;
 const ARCHIVE_THRESHOLD_SCORE = 4.0;
 
 const client = new PaapiClient({
