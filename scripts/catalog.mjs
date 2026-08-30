@@ -7,9 +7,9 @@ import { cleanProductName } from './lib/clean-name.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const TARGET_TAG = 'unismart00-21';
-const SEARCH_DELAY_MS = 1200;
-const PRODUCT_DELAY_MS = 900;
-const MAX_NEW_TOTAL = Number.parseInt(process.env.CATALOG_MAX ?? '200', 10);
+const SEARCH_DELAY_MS = 800;
+const PRODUCT_DELAY_MS = 500;
+const MAX_NEW_TOTAL = Number.parseInt(process.env.CATALOG_MAX ?? '500', 10);
 
 const queriesPath = path.join(root, 'scripts', 'data', 'catalog-queries.json');
 const templatesPath = path.join(root, 'scripts', 'data', 'catalog-templates.json');
