@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
+import { ToastProvider } from '@/components/ui/Toast';
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
@@ -64,11 +65,13 @@ export default function RootLayout({
         <div className="flex min-h-screen flex-col pb-16 md:pb-0">
           <ErrorBoundary>
             <CompareProvider>
-              <Navbar />
-              <main className="flex-1">{children}</main>
-              <Footer />
-              <CompareBar />
-              <MobileNav />
+              <ToastProvider>
+                <Navbar />
+                <main className="flex-1">{children}</main>
+                <Footer />
+                <CompareBar />
+                <MobileNav />
+              </ToastProvider>
             </CompareProvider>
           </ErrorBoundary>
         </div>
