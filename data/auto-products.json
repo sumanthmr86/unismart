@@ -8349,5 +8349,136 @@
     "priceUpdatedOn": "2026-08-29T12:03:17.478Z",
     "featured": false,
     "deal": true
+  },
+  {
+    "id": "shuttle-art-cute-desk-organizer-with-drawer-pen-stand",
+    "slug": "shuttle-art-cute-desk-organizer-with-drawer-pen-stand",
+    "name": "Shuttle Art Cute Desk Organizer",
+    "brand": "Shuttle Art",
+    "category": "study-setup",
+    "priceInr": 198,
+    "previousPriceInr": 599,
+    "rating": 4,
+    "ratingCount": 958,
+    "uniSmartScore": 8.5,
+    "shortRecommendation": "Top-rated desk essential on Amazon India — Cute Desk Organizer",
+    "description": "Shuttle Art Cute Desk Organizer. Top-rated desk essential on Amazon India — Cute Desk Organizer. Popular on Amazon India with a live price that updates automatically. Backed by rated 4/5 and 958 Amazon reviews. SPACIOUS WITH 5 COMPARTMENTS & 2 DRAWERS : Easily store pens, staplers, sticky notes, paper clips, and more. The five open sections keep items within reach, while the two pull-out drawers help hide clutter and small supplies.. Whether on a work desk, study table, or vanity, this organizer keeps your space clean and efficient. Great for students, professionals, or anyone working or studying from home.. Made from sturdy plastic that’s lightweight but built to last. It resists scratches, stains, and is easy to wipe clean—perfect for everyday use in busy environments",
+    "specs": [
+      {
+        "label": "Specific Uses For Product",
+        "value": "Cosmetics"
+      },
+      {
+        "label": "Material",
+        "value": "Plastic"
+      },
+      {
+        "label": "Special Feature",
+        "value": "Waterproof"
+      },
+      {
+        "label": "Colour",
+        "value": "Black"
+      },
+      {
+        "label": "Finish Type",
+        "value": "Matte"
+      },
+      {
+        "label": "Item Weight",
+        "value": "100 Grams"
+      },
+      {
+        "label": "Number of Compartments",
+        "value": "5"
+      },
+      {
+        "label": "Net Quantity",
+        "value": "1 Count"
+      },
+      {
+        "label": "Number of Items",
+        "value": "1"
+      }
+    ],
+    "pros": [
+      "SPACIOUS WITH 5 COMPARTMENTS & 2 DRAWERS : Easily store pens, staplers, sticky notes, paper clips, and more. The five open sections keep items within reach, while the two pull-out drawers help hide clutter and small supplies.",
+      "Whether on a work desk, study table, or vanity, this organizer keeps your space clean and efficient. Great for students, professionals, or anyone working or studying from home.",
+      "Made from sturdy plastic that’s lightweight but built to last. It resists scratches, stains, and is easy to wipe clean—perfect for everyday use in busy environments.",
+      "Use it as a pen holder, makeup organizer, or craft supply box. Its versatile design makes it perfect for organizing a wide range of items beyond just office supplies."
+    ],
+    "cons": [],
+    "bestFor": [
+      "Cleaner desks and better posture",
+      "Long study hours"
+    ],
+    "notIdealFor": [
+      "Studio-grade setups needing specialised equipment"
+    ],
+    "deals": [
+      {
+        "retailer": "amazon",
+        "url": "https://www.amazon.in/dp/B0FJM34MVF?tag=unismart00-21",
+        "priceInr": 198,
+        "note": "Auto-listed on Amazon India with live pricing"
+      },
+      {
+        "retailer": "flipkart",
+        "url": "https://www.flipkart.com/search?q=Shuttle%20Art%20Cute%20Desk%20Organizer",
+        "note": "Compare price on Flipkart"
+      }
+    ],
+    "reviews": [],
+    "image": "https://m.media-amazon.com/images/I/71NmDcB3NZL._SL1500_.jpg",
+    "priceUpdatedOn": "2026-08-31T09:39:21.024Z",
+    "featured": false,
+    "deal": true
+  },
+  {
+    "id": "safari-omega-spacious-large-laptop-backpack-with-raincover-college-2",
+    "slug": "safari-omega-spacious-large-laptop-backpack-with-raincover-college-2",
+    "name": "Safari Omega spacious/large laptop backpack",
+    "brand": "Safari",
+    "category": "backpacks",
+    "priceInr": 809,
+    "previousPriceInr": 3396,
+    "rating": 4.2,
+    "ratingCount": 16669,
+    "uniSmartScore": 8.3,
+    "shortRecommendation": "2 spacious compartments with 2 front pockets and an organizer compartment",
+    "description": "Safari Omega spacious/large laptop backpack. 2 spacious compartments with 2 front pockets and an organizer compartment. Popular on Amazon India with a live price that updates automatically. Backed by rated 4.2/5 and 16,669 Amazon reviews. 2 spacious compartments with 2 front pockets and an organizer compartment. Padded Laptop compartment. Compression straps and reflective strips for better travelling experience",
+    "specs": [],
+    "pros": [
+      "2 spacious compartments with 2 front pockets and an organizer compartment",
+      "Padded Laptop compartment",
+      "Compression straps and reflective strips for better travelling experience",
+      "Bottle and umbrella holder pockets, Padded shoulder straps"
+    ],
+    "cons": [],
+    "bestFor": [
+      "Daily college commute",
+      "Keeping a laptop and books organised"
+    ],
+    "notIdealFor": [
+      "Heavy trekking loads — check capacity and straps"
+    ],
+    "deals": [
+      {
+        "retailer": "amazon",
+        "url": "https://www.amazon.in/dp/B097JJ2CK6?tag=unismart00-21",
+        "priceInr": 809,
+        "note": "Auto-listed on Amazon India with live pricing"
+      },
+      {
+        "retailer": "flipkart",
+        "url": "https://www.flipkart.com/search?q=Safari%20Omega%20spacious%2Flarge%20laptop%20backp",
+        "note": "Compare price on Flipkart"
+      }
+    ],
+    "reviews": [],
+    "image": "https://m.media-amazon.com/images/I/71maWXZscfL._SL1500_.jpg",
+    "priceUpdatedOn": "2026-08-31T09:39:46.100Z",
+    "featured": false,
+    "deal": true
   }
 ]
