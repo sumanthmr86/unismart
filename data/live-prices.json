@@ -723,5 +723,25 @@
     "priceInr": 809,
     "previousPriceInr": 3396,
     "updatedAt": "2026-08-31T09:39:46.100Z"
+  },
+  "zebronics-type-c-fast-charging-cable-upto-480-mbps": {
+    "priceInr": 109,
+    "previousPriceInr": 399,
+    "updatedAt": "2026-09-07T08:12:52.100Z"
+  },
+  "edt-flow-pureglass-electric-kettle-1-litre-with-precision": {
+    "priceInr": 5999,
+    "previousPriceInr": 8999,
+    "updatedAt": "2026-09-07T08:13:13.815Z"
+  },
+  "lenovo-v15-g4-amd-ryzen-5-7520u-15-6": {
+    "priceInr": 58890,
+    "previousPriceInr": 95900,
+    "updatedAt": "2026-09-07T08:13:48.542Z"
+  },
+  "dell-15-previously-inspiron-laptop-14th-gen-intel-core": {
+    "priceInr": 56200,
+    "previousPriceInr": 63637,
+    "updatedAt": "2026-09-07T08:13:53.478Z"
   }
 }
