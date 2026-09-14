@@ -8796,5 +8796,71 @@
     "priceUpdatedOn": "2026-09-07T08:13:53.478Z",
     "featured": false,
     "deal": false
+  },
+  {
+    "id": "digiway-4-universal-socket-3-switch-multiplug-sockets-extension",
+    "slug": "digiway-4-universal-socket-3-switch-multiplug-sockets-extension",
+    "name": "Digiway 4 Universal Socket 3 Switch Multiplug Sockets Extension Board/Extension ",
+    "brand": "Digiway",
+    "category": "power-charging",
+    "priceInr": 150,
+    "previousPriceInr": 499,
+    "rating": 3.9,
+    "ratingCount": 526,
+    "uniSmartScore": 8.3,
+    "shortRecommendation": "Voltage and Current Rating - 6 Amp 220V AC user can use up to 800W total load on the Multi Plug",
+    "description": "Digiway 4 Universal Socket 3 Switch Multiplug Sockets Extension Board/Extension . Voltage and Current Rating - 6 Amp 220V AC user can use up to 800W total load on the Multi Plug. Popular on Amazon India with a live price that updates automatically. Backed by rated 3.9/5 and 526 Amazon reviews. Voltage and Current Rating - 6 Amp 220V AC user can use up to 800W total load on the Multi Plug. 3 No's on/off safety switch. 4 Universal Sockets - User can Connect 4 Devices at a same time. The upper most socket is direct to supply",
+    "specs": [
+      {
+        "label": "Colour",
+        "value": "Beige"
+      },
+      {
+        "label": "Total Power Outlets",
+        "value": "4"
+      },
+      {
+        "label": "Voltage",
+        "value": "220 Volts"
+      },
+      {
+        "label": "Special Feature",
+        "value": "Compact"
+      }
+    ],
+    "pros": [
+      "Voltage and Current Rating - 6 Amp 220V AC user can use up to 800W total load on the Multi Plug",
+      "3 No's on/off safety switch",
+      "4 Universal Sockets - User can Connect 4 Devices at a same time. The upper most socket is direct to supply.",
+      "ABS high Quality Plastic used for Multi Plug"
+    ],
+    "cons": [
+      "Customer reviews sit at 3.9 out of 5"
+    ],
+    "bestFor": [
+      "Topping up devices around campus",
+      "Hostel sockets and travel"
+    ],
+    "notIdealFor": [
+      "Specialist setups beyond phones, laptops and tablets"
+    ],
+    "deals": [
+      {
+        "retailer": "amazon",
+        "url": "https://www.amazon.in/dp/B0BWYGQ6JG?tag=unismart00-21",
+        "priceInr": 150,
+        "note": "Auto-listed on Amazon India with live pricing"
+      },
+      {
+        "retailer": "flipkart",
+        "url": "https://www.flipkart.com/search?q=Digiway%204%20Universal%20Socket%203%20Switch%20Mult",
+        "note": "Compare price on Flipkart"
+      }
+    ],
+    "reviews": [],
+    "image": "https://m.media-amazon.com/images/I/71ONkHHYj3L._SL1500_.jpg",
+    "priceUpdatedOn": "2026-09-14T08:49:52.048Z",
+    "featured": false,
+    "deal": true
   }
 ]
