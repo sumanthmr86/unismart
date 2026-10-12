@@ -10520,5 +10520,568 @@
     "priceUpdatedOn": "2026-10-05T10:22:16.350Z",
     "featured": false,
     "deal": true
+  },
+  {
+    "id": "aqua-x-pure-grand-plus-alkaline-ro-water-purifier",
+    "slug": "aqua-x-pure-grand-plus-alkaline-ro-water-purifier",
+    "name": "Aqua X Pure® Grand Plus Alkaline RO Water Purifier | RO+UV+UF Technology | Coppe",
+    "brand": "Generic",
+    "category": "hostel-essentials",
+    "priceInr": 4299,
+    "previousPriceInr": 18999,
+    "rating": 4.4,
+    "ratingCount": 203,
+    "uniSmartScore": 8.7,
+    "shortRecommendation": "Top-rated hostel essential on Amazon India — Aqua X Pure® Grand Plus Alkaline RO Water Purifi",
+    "description": "Aqua X Pure® Grand Plus Alkaline RO Water Purifier | RO+UV+UF Technology | Coppe. Top-rated hostel essential on Amazon India — Aqua X Pure® Grand Plus Alkaline RO Water Purifi. Popular on Amazon India with a live price that updates automatically. Backed by rated 4.4/5 and 203 Amazon reviews. Advanced RO+UV+UF+TDS Filtration - Removes viruses, bacteria, heavy metals, and harmful dissolved salts for safe drinking water.. Auto Flush RO Membrane System - The Auto Flush system automatically cleans the RO membrane at regular intervals, which extends the lifespan of the membrane significantly.. Boiling Technology - Kills 99.99% of bacteria, viruses, and harmful microorganisms, making every drop as safe as water boiled for 20 minutes, without any chemical use",
+    "specs": [
+      {
+        "label": "Special Feature",
+        "value": "(function(f) {var _np=(window.P._namespace(\"DetailPageProductOverviewTemplatesJava\"));if(_np.guardFatal){_np.guardFatal(f)(_np);}else{f(_np);}}(function(P) {\n P.when('A').execute(function(A){\n A.on('a:truncate:po-attribute-truncate-1:updated', function(data) {\n var isTruncated = !data.truncateInstance.getIfTextFits();\n var seeMoreElement = document.getElementById('po-attribute-see-more-id-1');\n if(seeMoreElement) {\n seeMoreElement.style.display = isTruncated ? '' : 'none';\n }\n })\n });\n})); Works Smoothly On All Types of Water Supplies, Highest Working on 3000ppm & 20 LPH Filteration Capacity, Make your Water 100% Pure & Healthy, Protect your Family from Water Borne diseases. Purify your Tap Water with AQUA RO before you Drink., (RO+ UV+ ORC COPPER+NC+B12 ALKALINE+ HTM+ TDS CONTROL) The Most 12 Stages Filteration Process, Automatic Shut-Off, 100 GPD High Quality 100% Pure Copper Armature Diaphragm Booster Pump, Automatic Shut-Off See more"
+      },
+      {
+        "label": "Product Dimensions",
+        "value": "30L x 18W x 40H Centimeters"
+      },
+      {
+        "label": "Material",
+        "value": "Food Grade ABS Plastic"
+      },
+      {
+        "label": "Capacity",
+        "value": "12 Liters"
+      }
+    ],
+    "pros": [
+      "Advanced RO+UV+UF+TDS Filtration - Removes viruses, bacteria, heavy metals, and harmful dissolved salts for safe drinking water.",
+      "Auto Flush RO Membrane System - The Auto Flush system automatically cleans the RO membrane at regular intervals, which extends the lifespan of the membrane significantly.",
+      "Boiling Technology - Kills 99.99% of bacteria, viruses, and harmful microorganisms, making every drop as safe as water boiled for 20 minutes, without any chemical use.",
+      "High TDS Controller - Automatically adjusts TDS levels without manual efforts, giving safe, tasty water every time."
+    ],
+    "cons": [],
+    "bestFor": [
+      "Hostel and PG life",
+      "Quick meals and small spaces"
+    ],
+    "notIdealFor": [
+      "Large families or heavy cookloads"
+    ],
+    "deals": [
+      {
+        "retailer": "amazon",
+        "url": "https://www.amazon.in/dp/B0GRHLH4LD?tag=unismart00-21",
+        "priceInr": 4299,
+        "note": "Auto-listed on Amazon India with live pricing"
+      },
+      {
+        "retailer": "flipkart",
+        "url": "https://www.flipkart.com/search?q=Aqua%20X%20Pure%C2%AE%20Grand%20Plus%20Alkaline%20RO%20Wate",
+        "note": "Compare price on Flipkart"
+      }
+    ],
+    "reviews": [],
+    "image": "https://m.media-amazon.com/images/I/61XX2F-uYHL._SL1080_.jpg",
+    "priceUpdatedOn": "2026-10-12T10:40:26.786Z",
+    "featured": false,
+    "deal": true
+  },
+  {
+    "id": "pebble-qore-2-smart-band-heart-rate-hrv-body-2",
+    "slug": "pebble-qore-2-smart-band-heart-rate-hrv-body-2",
+    "name": "Pebble Qore 2 Smart Band Heart Rate | HRV | Body Temperature Monitoring | Sleep ",
+    "brand": "Pebble",
+    "category": "accessories",
+    "priceInr": 2999,
+    "previousPriceInr": 5999,
+    "rating": 3.7,
+    "ratingCount": 750,
+    "uniSmartScore": 8.1,
+    "shortRecommendation": "Smart Band with Advanced Heart Rate, SpO2 & HRV Monitoring for complete health insights",
+    "description": "Pebble Qore 2 Smart Band Heart Rate | HRV | Body Temperature Monitoring | Sleep . Smart Band with Advanced Heart Rate, SpO2 & HRV Monitoring for complete health insights. Popular on Amazon India with a live price that updates automatically. Backed by rated 3.7/5 and 750 Amazon reviews. Smart Band with Advanced Heart Rate, SpO2 & HRV Monitoring for complete health insights. Sleep Tracking to monitor sleep quality & patterns. Body Temperature Sensor for real‑time wellness updates",
+    "specs": [
+      {
+        "label": "Operating System",
+        "value": "Pebble OS"
+      },
+      {
+        "label": "Memory Storage Capacity",
+        "value": "5 MB"
+      },
+      {
+        "label": "Special Feature",
+        "value": "Lightweight"
+      },
+      {
+        "label": "Battery Capacity",
+        "value": "300"
+      },
+      {
+        "label": "Connectivity Technology",
+        "value": "Bluetooth"
+      }
+    ],
+    "pros": [
+      "Smart Band with Advanced Heart Rate, SpO2 & HRV Monitoring for complete health insights",
+      "Sleep Tracking to monitor sleep quality & patterns",
+      "Body Temperature Sensor for real‑time wellness updates",
+      "5 ATM Water Resistant – safe for swimming & workouts"
+    ],
+    "cons": [
+      "Customer reviews sit at 3.7 out of 5"
+    ],
+    "bestFor": [
+      "Wearable convenience on campus",
+      "Fitness and notifications"
+    ],
+    "notIdealFor": [
+      "Medical-grade tracking"
+    ],
+    "deals": [
+      {
+        "retailer": "amazon",
+        "url": "https://www.amazon.in/dp/B0GG51TVLP?tag=unismart00-21",
+        "priceInr": 2999,
+        "note": "Auto-listed on Amazon India with live pricing"
+      },
+      {
+        "retailer": "flipkart",
+        "url": "https://www.flipkart.com/search?q=Pebble%20Qore%202%20Smart%20Band%20Heart%20Rate%20%7C%20HR",
+        "note": "Compare price on Flipkart"
+      }
+    ],
+    "reviews": [],
+    "image": "https://m.media-amazon.com/images/I/71wZQ2Qk8tL._SL1500_.jpg",
+    "priceUpdatedOn": "2026-10-12T10:40:51.788Z",
+    "featured": false,
+    "deal": true
+  },
+  {
+    "id": "google-fitbit-air-screenless-activity-tracker-with-fitness-heart",
+    "slug": "google-fitbit-air-screenless-activity-tracker-with-fitness-heart",
+    "name": "Google Fitbit Air - Screenless Activity Tracker",
+    "brand": "Fitbit",
+    "category": "accessories",
+    "priceInr": 14880,
+    "previousPriceInr": 29999,
+    "rating": 4.2,
+    "ratingCount": 137,
+    "uniSmartScore": 8.4,
+    "shortRecommendation": "Top-rated accessory on Amazon India — Google Fitbit Air - Screenless Activity Tracker",
+    "description": "Google Fitbit Air - Screenless Activity Tracker. Top-rated accessory on Amazon India — Google Fitbit Air - Screenless Activity Tracker. Popular on Amazon India with a live price that updates automatically. Backed by rated 4.2/5 and 137 Amazon reviews. Google Fitbit Air is the unbelievably comfortable, exceptionally smart way to transform your health[1]; and Google Health brings together effortless tracking and adaptive coaching to help make the most of your everyday. Unlock more with Google Health Premium: With a premium membership, get personalized coaching that’s built with Gemini and adapts to your life[2]; get a 3-month trial at no cost to you[5] (Google Health Premium subscription sold separately. Comfortable fit - One Size Tracker (130-210 mm): The lightweight, micro-adjustable fit sits comfortably and quietly, so you can wear Google Fitbit Air through work, play, and sleep; advanced sensors and new algorithms power more accurate, precise health tracking, 24/7",
+    "specs": [
+      {
+        "label": "Special Feature",
+        "value": "Activity Tracker , Sleep Monitor , Heart Rate Monitor"
+      },
+      {
+        "label": "Wireless Communication Standard",
+        "value": "Bluetooth"
+      },
+      {
+        "label": "Battery Cell Composition",
+        "value": "Other Than Listed"
+      },
+      {
+        "label": "Model Name",
+        "value": "Fitbit Air"
+      }
+    ],
+    "pros": [
+      "Google Fitbit Air is the unbelievably comfortable, exceptionally smart way to transform your health[1]; and Google Health brings together effortless tracking and adaptive coaching to help make the most of your everyday",
+      "Unlock more with Google Health Premium: With a premium membership, get personalized coaching that’s built with Gemini and adapts to your life[2]; get a 3-month trial at no cost to you[5] (Google Health Premium subscription sold separately",
+      "Comfortable fit - One Size Tracker (130-210 mm): The lightweight, micro-adjustable fit sits comfortably and quietly, so you can wear Google Fitbit Air through work, play, and sleep; advanced sensors and new algorithms power more accurate, precise health tracking, 24/7"
+    ],
+    "cons": [],
+    "bestFor": [
+      "Wearable convenience on campus",
+      "Fitness and notifications"
+    ],
+    "notIdealFor": [
+      "Medical-grade tracking"
+    ],
+    "deals": [
+      {
+        "retailer": "amazon",
+        "url": "https://www.amazon.in/dp/B0GYP3RP99?tag=unismart00-21",
+        "priceInr": 14880,
+        "note": "Auto-listed on Amazon India with live pricing"
+      },
+      {
+        "retailer": "flipkart",
+        "url": "https://www.flipkart.com/search?q=Google%20Fitbit%20Air%20-%20Screenless%20Activity%20",
+        "note": "Compare price on Flipkart"
+      }
+    ],
+    "reviews": [],
+    "image": "https://m.media-amazon.com/images/I/51itd2cP0EL._SL1000_.jpg",
+    "priceUpdatedOn": "2026-10-12T10:40:55.279Z",
+    "featured": false,
+    "deal": true
+  },
+  {
+    "id": "drumstone-smart-fitness-band-with-heart-rate-monitor-oled",
+    "slug": "drumstone-smart-fitness-band-with-heart-rate-monitor-oled",
+    "name": "Drumstone 𝟏𝟓 𝐘𝐞𝐚𝐫𝐬 𝐖𝐚𝐫𝐫𝐚𝐧𝐭𝐲 Smart Fitness Band",
+    "brand": "Drumstone",
+    "category": "accessories",
+    "priceInr": 889,
+    "previousPriceInr": 1999,
+    "rating": 5,
+    "ratingCount": 1,
+    "uniSmartScore": 9.2,
+    "shortRecommendation": "Top-rated accessory on Amazon India — 𝟏𝟓 𝐘𝐞𝐚𝐫𝐬 𝐖𝐚𝐫𝐫𝐚𝐧𝐭𝐲 Smart Fitness B",
+    "description": "Drumstone 𝟏𝟓 𝐘𝐞𝐚𝐫𝐬 𝐖𝐚𝐫𝐫𝐚𝐧𝐭𝐲 Smart Fitness Band. Top-rated accessory on Amazon India — 𝟏𝟓 𝐘𝐞𝐚𝐫𝐬 𝐖𝐚𝐫𝐫𝐚𝐧𝐭𝐲 Smart Fitness B. Popular on Amazon India with a live price that updates automatically. Backed by rated 5/5 and 1 Amazon reviews. 𝐀𝐋𝐋-𝐃𝐀𝐘 𝐇𝐄𝐀𝐑𝐓 𝐑𝐀𝐓𝐄 𝐌𝐎𝐍𝐈𝐓𝐎𝐑𝐈𝐍𝐆】 Designed to monitor your heart rate throughout the day, this smart fitness band helps you stay informed about your activity levels during walking, running, workouts and everyday routines. The easy-to-read display lets you check your heart rate quickly, making it simple to understand your daily fitness progress and maintain a more active lifestyle.. 𝐃𝐀𝐈𝐋𝐘 𝐀𝐂𝐓𝐈𝐕𝐈𝐓𝐘 & 𝐅𝐈𝐓𝐍𝐄𝐒𝐒 𝐓𝐑𝐀𝐂𝐊𝐈𝐍𝐆】 Track important daily fitness data including step count, walking distance, calorie information and activity progress to help maintain healthy habits. Whether you're exercising, commuting, walking outdoors or staying active at work, the fitness tracker provides useful insights that help you stay motivated and work toward your personal wellness goals.. 𝐎𝐋𝐄𝐃 𝐓𝐎𝐔𝐂𝐇 𝐃𝐈𝐒𝐏𝐋𝐀𝐘 & 𝐒𝐌𝐀𝐑𝐓 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐓𝐈𝐎𝐍𝐒】 The bright OLED touchscreen offers clear visibility for fitness information, while Bluetooth connectivity allows compatible smartphones to display call alerts, message notifications, calendar reminders and supported app notifications directly on your wrist. Quickly view important updates without constantly checking your phone during meetings, workouts or travel",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Silicone"
+      },
+      {
+        "label": "Colour",
+        "value": "Black"
+      },
+      {
+        "label": "Compatible Devices",
+        "value": "Smartphones"
+      },
+      {
+        "label": "Product Dimensions",
+        "value": "10L x 3.2W x 1.2H Centimeters"
+      },
+      {
+        "label": "Item Weight",
+        "value": "130 Grams"
+      },
+      {
+        "label": "Sensor Type",
+        "value": "Wearable"
+      },
+      {
+        "label": "Number of Items",
+        "value": "1"
+      },
+      {
+        "label": "Manufacturer",
+        "value": "M3band_AKJul1"
+      },
+      {
+        "label": "Size",
+        "value": "Standard"
+      }
+    ],
+    "pros": [
+      "𝐀𝐋𝐋-𝐃𝐀𝐘 𝐇𝐄𝐀𝐑𝐓 𝐑𝐀𝐓𝐄 𝐌𝐎𝐍𝐈𝐓𝐎𝐑𝐈𝐍𝐆】 Designed to monitor your heart rate throughout the day, this smart fitness band helps you stay informed about your activity levels during walking, running, workouts and everyday routines. The easy-to-read display lets you check your heart rate quickly, making it simple to understand your daily fitness progress and maintain a more active lifestyle.",
+      "𝐃𝐀𝐈𝐋𝐘 𝐀𝐂𝐓𝐈𝐕𝐈𝐓𝐘 & 𝐅𝐈𝐓𝐍𝐄𝐒𝐒 𝐓𝐑𝐀𝐂𝐊𝐈𝐍𝐆】 Track important daily fitness data including step count, walking distance, calorie information and activity progress to help maintain healthy habits. Whether you're exercising, commuting, walking outdoors or staying active at work, the fitness tracker provides useful insights that help you stay motivated and work toward your personal wellness goals.",
+      "𝐎𝐋𝐄𝐃 𝐓𝐎𝐔𝐂𝐇 𝐃𝐈𝐒𝐏𝐋𝐀𝐘 & 𝐒𝐌𝐀𝐑𝐓 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐓𝐈𝐎𝐍𝐒】 The bright OLED touchscreen offers clear visibility for fitness information, while Bluetooth connectivity allows compatible smartphones to display call alerts, message notifications, calendar reminders and supported app notifications directly on your wrist. Quickly view important updates without constantly checking your phone during meetings, workouts or travel.",
+      "𝐖𝐀𝐓𝐄𝐑𝐏𝐑𝐎𝐎𝐅 & 𝐂𝐎𝐌𝐅𝐎𝐑𝐓𝐀𝐁𝐋𝐄 𝐅𝐎𝐑 𝐄𝐕𝐄𝐑𝐘𝐃𝐀𝐘 𝐔𝐒𝐄】 Built with a lightweight strap and waterproof design, this activity tracker is comfortable to wear throughout the day during office work, exercise sessions, walking, cycling and other daily activities. The secure adjustable strap provides a comfortable fit for extended wear while supporting an active lifestyle."
+    ],
+    "cons": [],
+    "bestFor": [
+      "Wearable convenience on campus",
+      "Fitness and notifications"
+    ],
+    "notIdealFor": [
+      "Medical-grade tracking"
+    ],
+    "deals": [
+      {
+        "retailer": "amazon",
+        "url": "https://www.amazon.in/dp/B0H8SQQZJ1?tag=unismart00-21",
+        "priceInr": 889,
+        "note": "Auto-listed on Amazon India with live pricing"
+      },
+      {
+        "retailer": "flipkart",
+        "url": "https://www.flipkart.com/search?q=Drumstone%20%F0%9D%9F%8F%F0%9D%9F%93%20%F0%9D%90%98%F0%9D%90%9E%F0%9D%90%9A%F0%9D%90%AB%F0%9D%90%AC%20%F0%9D%90%96%F0%9D%90%9A%F0%9D%90%AB%F0%9D%90%AB%F0%9D%90%9A%F0%9D%90%A7%F0%9D%90%AD",
+        "note": "Compare price on Flipkart"
+      }
+    ],
+    "reviews": [],
+    "image": "https://m.media-amazon.com/images/I/41ZIL4WWQML._SY300_SX300_QL70_FMwebp_.jpg",
+    "priceUpdatedOn": "2026-10-12T10:40:56.698Z",
+    "featured": false,
+    "deal": true
+  },
+  {
+    "id": "pebble-dash-smartwatch-1-47-hd-display-bluetooth-calling",
+    "slug": "pebble-dash-smartwatch-1-47-hd-display-bluetooth-calling",
+    "name": "Pebble Dash Smartwatch 1.47\" HD Display | Bluetooth Calling | Health Suite | Fem",
+    "brand": "Pebble",
+    "category": "accessories",
+    "priceInr": 1999,
+    "previousPriceInr": 4999,
+    "rating": 3.3,
+    "ratingCount": 117,
+    "uniSmartScore": 7.1,
+    "shortRecommendation": "Top-rated accessory on Amazon India — Dash Smartwatch 1.47\" HD Display | Bluetooth Cal",
+    "description": "Pebble Dash Smartwatch 1.47\" HD Display | Bluetooth Calling | Health Suite | Fem. Top-rated accessory on Amazon India — Dash Smartwatch 1.47\" HD Display | Bluetooth Cal. Popular on Amazon India with a live price that updates automatically. Backed by rated 3.3/5 and 117 Amazon reviews. NexGen Health Monitoring Suite: Track heart rate, SpO2, sleep, and female health with precision",
+    "specs": [
+      {
+        "label": "Special Feature",
+        "value": "Activity Tracker"
+      },
+      {
+        "label": "Battery Capacity",
+        "value": "300"
+      },
+      {
+        "label": "Connectivity Technology",
+        "value": "Bluetooth"
+      },
+      {
+        "label": "Wireless Communication Standard",
+        "value": "Bluetooth"
+      },
+      {
+        "label": "Battery Cell Composition",
+        "value": "Lithium Polymer"
+      }
+    ],
+    "pros": [
+      "NexGen Health Monitoring Suite: Track heart rate, SpO2, sleep, and female health with precision."
+    ],
+    "cons": [
+      "Customer reviews sit at 3.3 out of 5"
+    ],
+    "bestFor": [
+      "Wearable convenience on campus",
+      "Fitness and notifications"
+    ],
+    "notIdealFor": [
+      "Medical-grade tracking"
+    ],
+    "deals": [
+      {
+        "retailer": "amazon",
+        "url": "https://www.amazon.in/dp/B0G6K9G3YS?tag=unismart00-21",
+        "priceInr": 1999,
+        "note": "Auto-listed on Amazon India with live pricing"
+      },
+      {
+        "retailer": "flipkart",
+        "url": "https://www.flipkart.com/search?q=Pebble%20Dash%20Smartwatch%201.47%22%20HD%20Display%20",
+        "note": "Compare price on Flipkart"
+      }
+    ],
+    "reviews": [],
+    "image": "https://m.media-amazon.com/images/I/61lWo7CXJgL._SL1500_.jpg",
+    "priceUpdatedOn": "2026-10-12T10:41:03.075Z",
+    "featured": false,
+    "deal": true
+  },
+  {
+    "id": "hammonds-flycatcher-genuine-leather-office-bag-for-men-15",
+    "slug": "hammonds-flycatcher-genuine-leather-office-bag-for-men-15",
+    "name": "HAMMONDS FLYCATCHER Genuine Leather Office Bag for Men - 15.6 Inch Laptop Bag fo",
+    "brand": "HAMMONDS FLYCATCHER",
+    "category": "laptops",
+    "priceInr": 2559,
+    "previousPriceInr": 9999,
+    "rating": 4.3,
+    "ratingCount": 6681,
+    "uniSmartScore": 8.5,
+    "shortRecommendation": "Top-rated laptop on Amazon India — Genuine Leather Office Bag for Men - 15.6 Inch L",
+    "description": "HAMMONDS FLYCATCHER Genuine Leather Office Bag for Men - 15.6 Inch Laptop Bag fo. Top-rated laptop on Amazon India — Genuine Leather Office Bag for Men - 15.6 Inch L. Popular on Amazon India with a live price that updates automatically. Backed by rated 4.3/5 and 6,681 Amazon reviews. Genuine Leather Excellence: Crafted from premium genuine leather, this office bag for men ensures durability and a sophisticated look, perfect for professional settings and daily use. This laptop messenger bag is an ideal choice for those seeking a stylish and practical laptop bag for men office use.. Spacious and Organized: Featuring 1 main compartment, 1 padded laptop compartment, 1 inner zipper pocket, 1 wallet pocket, 1 mobile pocket, and 2 pen slots, this hammonds flycatcher leather laptop bag for men keeps all your essentials neatly organized. This men office bag ensures you have everything you need at your fingertips.. Comfortable and Adjustable Leather Laptop Bag for Men: Designed with a comfortable leather handle and padded removable, adjustable shoulder straps, this mens office bag and office laptop bag provides versatile carrying options for maximum comfort during commutes",
+    "specs": [],
+    "pros": [
+      "Genuine Leather Excellence: Crafted from premium genuine leather, this office bag for men ensures durability and a sophisticated look, perfect for professional settings and daily use. This laptop messenger bag is an ideal choice for those seeking a stylish and practical laptop bag for men office use.",
+      "Spacious and Organized: Featuring 1 main compartment, 1 padded laptop compartment, 1 inner zipper pocket, 1 wallet pocket, 1 mobile pocket, and 2 pen slots, this hammonds flycatcher leather laptop bag for men keeps all your essentials neatly organized. This men office bag ensures you have everything you need at your fingertips.",
+      "Comfortable and Adjustable Leather Laptop Bag for Men: Designed with a comfortable leather handle and padded removable, adjustable shoulder straps, this mens office bag and office laptop bag provides versatile carrying options for maximum comfort during commutes.",
+      "Fits 15.6 Inch Devices: This 15.6 laptop bag accommodates laptops, MacBooks, and notebooks up to 15.6 inches. Dimensions: Length - 40cm, Width - 8cm, Height - 29cm, making it a perfect fit for most standard devices. Ideal as a men laptop bag for office use and as an office bag for men."
+    ],
+    "cons": [],
+    "bestFor": [
+      "Daily college work and web use",
+      "Media, projects and light coding"
+    ],
+    "notIdealFor": [
+      "Heavy gaming without a dedicated GPU — check specs"
+    ],
+    "deals": [
+      {
+        "retailer": "amazon",
+        "url": "https://www.amazon.in/dp/B07P2TQH78?tag=unismart00-21",
+        "priceInr": 2559,
+        "note": "Auto-listed on Amazon India with live pricing"
+      },
+      {
+        "retailer": "flipkart",
+        "url": "https://www.flipkart.com/search?q=HAMMONDS%20FLYCATCHER%20Genuine%20Leather%20Offi",
+        "note": "Compare price on Flipkart"
+      }
+    ],
+    "reviews": [],
+    "image": "https://m.media-amazon.com/images/I/91iZGaSnsPL._SL1500_.jpg",
+    "priceUpdatedOn": "2026-10-12T10:41:14.461Z",
+    "featured": false,
+    "deal": true
+  },
+  {
+    "id": "hp-omnibook-5-oled-previously-pavilion-snapdragon-x-processor",
+    "slug": "hp-omnibook-5-oled-previously-pavilion-snapdragon-x-processor",
+    "name": "HP Omnibook 5 OLED (Previously Pavilion)",
+    "brand": "HP",
+    "category": "laptops",
+    "priceInr": 79990,
+    "previousPriceInr": 85965,
+    "rating": 4.1,
+    "ratingCount": 164,
+    "uniSmartScore": 7.3,
+    "shortRecommendation": "Top-rated laptop on Amazon India — Omnibook 5 OLED (Previously Pavilion)",
+    "description": "HP Omnibook 5 OLED (Previously Pavilion). Top-rated laptop on Amazon India — Omnibook 5 OLED (Previously Pavilion). Popular on Amazon India with a live price that updates automatically. Backed by rated 4.1/5 and 164 Amazon reviews. Processor, Memory & Storage: Snapdragon X X1-26-100 (up to 2.97 GHz, 8 cores). Memory: Snapdragon X X1-26-100 (up to 2.97 GHz, 8 cores). Storage: 1 TB PCIe NVMe M.2 SSD",
+    "specs": [
+      {
+        "label": "Model Name",
+        "value": "HP Laptop"
+      },
+      {
+        "label": "Screen Size",
+        "value": "40.6 Centimetres"
+      },
+      {
+        "label": "Colour",
+        "value": "Glacier Silver"
+      },
+      {
+        "label": "Hard Disk Size",
+        "value": "1 TB"
+      },
+      {
+        "label": "CPU Model",
+        "value": "Snapdragon X"
+      },
+      {
+        "label": "RAM Memory Installed Size",
+        "value": "16 GB"
+      },
+      {
+        "label": "Operating System",
+        "value": "Windows 11 Home"
+      },
+      {
+        "label": "Special Feature",
+        "value": "AI Assistant, Fast Charge"
+      },
+      {
+        "label": "Graphics Card Description",
+        "value": "Integrated"
+      }
+    ],
+    "pros": [
+      "Processor, Memory & Storage: Snapdragon X X1-26-100 (up to 2.97 GHz, 8 cores)",
+      "Memory: Snapdragon X X1-26-100 (up to 2.97 GHz, 8 cores)",
+      "Storage: 1 TB PCIe NVMe M.2 SSD",
+      "Operating System & Preinstalled Software: Windows 11 Home Single Language"
+    ],
+    "cons": [],
+    "bestFor": [
+      "Daily college work and web use",
+      "Media, projects and light coding"
+    ],
+    "notIdealFor": [
+      "Heavy gaming without a dedicated GPU — check specs"
+    ],
+    "deals": [
+      {
+        "retailer": "amazon",
+        "url": "https://www.amazon.in/dp/B0FRM3G9JF?tag=unismart00-21",
+        "priceInr": 79990,
+        "note": "Auto-listed on Amazon India with live pricing"
+      },
+      {
+        "retailer": "flipkart",
+        "url": "https://www.flipkart.com/search?q=HP%20Omnibook%205%20OLED%20(Previously%20Pavilion)",
+        "note": "Compare price on Flipkart"
+      }
+    ],
+    "reviews": [],
+    "image": "https://m.media-amazon.com/images/I/61LWNk6pg5L._SL1500_.jpg",
+    "priceUpdatedOn": "2026-10-12T10:41:24.957Z",
+    "featured": false,
+    "deal": false
+  },
+  {
+    "id": "acer-aspire-5-ai-pc-intel-core-ultra-5",
+    "slug": "acer-aspire-5-ai-pc-intel-core-ultra-5",
+    "name": "Acer Aspire 5 AI PC",
+    "brand": "Acer",
+    "category": "laptops",
+    "priceInr": 69990,
+    "previousPriceInr": 99999,
+    "rating": 4.3,
+    "ratingCount": 9,
+    "uniSmartScore": 8.1,
+    "shortRecommendation": "Top-rated laptop on Amazon India — Aspire 5 AI PC",
+    "description": "Acer Aspire 5 AI PC. Top-rated laptop on Amazon India — Aspire 5 AI PC. Popular on Amazon India with a live price that updates automatically. Backed by rated 4.3/5 and 9 Amazon reviews. Processor : Intel Core Ultra 5 125H processor(3.6 GHz base clock, up to 4.5 GHz max boost clock, 18 MB L3 cache, 14 cores). Memory: 16 GB of onboard LPDDR5 system memory,. Storage: 512 GB, PCIe Gen4, NVMe, expandable up to 1TB",
+    "specs": [
+      {
+        "label": "Model Name",
+        "value": "Aspire 5"
+      },
+      {
+        "label": "Screen Size",
+        "value": "14 Inches"
+      },
+      {
+        "label": "Colour",
+        "value": "Silver"
+      },
+      {
+        "label": "Hard Disk Size",
+        "value": "512 GB"
+      },
+      {
+        "label": "CPU Model",
+        "value": "Intel Core Ultra 5"
+      },
+      {
+        "label": "RAM Memory Installed Size",
+        "value": "16 GB"
+      },
+      {
+        "label": "Operating System",
+        "value": "Windows 11 Home"
+      },
+      {
+        "label": "Special Feature",
+        "value": "Visibly Stunning"
+      },
+      {
+        "label": "Graphics Card Description",
+        "value": "Integrated"
+      }
+    ],
+    "pros": [
+      "Processor : Intel Core Ultra 5 125H processor(3.6 GHz base clock, up to 4.5 GHz max boost clock, 18 MB L3 cache, 14 cores)",
+      "Memory: 16 GB of onboard LPDDR5 system memory,",
+      "Storage: 512 GB, PCIe Gen4, NVMe, expandable up to 1TB",
+      "Operating System: Windows 11 Home"
+    ],
+    "cons": [],
+    "bestFor": [
+      "Daily college work and web use",
+      "Media, projects and light coding"
+    ],
+    "notIdealFor": [
+      "Heavy gaming without a dedicated GPU — check specs"
+    ],
+    "deals": [
+      {
+        "retailer": "amazon",
+        "url": "https://www.amazon.in/dp/B0H2H5QTJD?tag=unismart00-21",
+        "priceInr": 69990,
+        "note": "Auto-listed on Amazon India with live pricing"
+      },
+      {
+        "retailer": "flipkart",
+        "url": "https://www.flipkart.com/search?q=Acer%20Aspire%205%20AI%20PC",
+        "note": "Compare price on Flipkart"
+      }
+    ],
+    "reviews": [],
+    "image": "https://m.media-amazon.com/images/I/718xrZum-mL._SL1500_.jpg",
+    "priceUpdatedOn": "2026-10-12T10:41:28.946Z",
+    "featured": false,
+    "deal": true
   }
 ]
